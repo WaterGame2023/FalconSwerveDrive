@@ -101,7 +101,7 @@ public class Swerve extends SubsystemBase {
 
     public Rotation2d getYaw() {
     if (gyro.isMagnetometerCalibrated()) {
-     // We will only get valid fused headings if the magnetometer is calibrated
+     // will only get valid fused headings if the magnetometer is calibrated
       return Rotation2d.fromDegrees(gyro.getFusedHeading());
     }
 
