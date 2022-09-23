@@ -33,16 +33,12 @@ public class Swerve extends SubsystemBase {
     public SwerveDriveOdometry swerveOdometry;
     public SwerveModule[] mSwerveMods;
     public AHRS gyro;
-    //public PigeonIMU gyro;
 
     public Swerve() {
-        // gyro = new PigeonIMU(Constants.Swerve.pigeonID); //Pigeon
         gyro = new AHRS(SPI.Port.kMXP, (byte) 1000);
-        //gyro.configFactoryDefault(); // Pigeon
-        //zeroGyro(); //Pigeon
-        gyro.zeroGyro();
+        gyro.zeroYaw();
         
-        swerveOdometry = new SwerveDriveOdometry(Constants.Swerve.swerveKinematics, gyro.getYaw());
+        swerveOdometry = new SwerveDriveOdometry(Constants.Swerve.swerveKinematics, Rotation2d.fromDegrees(gyro.getFusedHeading()));
         //swerveOdometry = new SwerveDriveOdometry(Constants.Swerve.swerveKinematics, getYaw());
 
         mSwerveMods = new SwerveModule[] {
@@ -100,14 +96,23 @@ public class Swerve extends SubsystemBase {
     }
 
     public void zeroGyro(){
-        gyro.zeroYaw();; // Sets the yaw axis to be zero
-        //gyro.setYaw(0); //Pigeon
+    gyro.zeroYaw();
     }
 
     public Rotation2d getYaw() {
-        double[] ypr = new double[3];
-        gyro.getYawPitchRoll(ypr);
-        return (Constants.Swerve.invertGyro) ? Rotation2d.fromDegrees(360 - ypr[0]) : Rotation2d.fromDegrees(ypr[0]);
+    if (gyro.isMagnetometerCalibrated()) {
+     // We will only get valid fused headings if the magnetometer is calibrated
+      return Rotation2d.fromDegrees(gyro.getFusedHeading());
+    }
+
+    // Need to invert for navX
+    if (Constants.Swerve.invertGyro) {
+    return Rotation2d.fromDegrees(360.0 - gyro.getYaw());
+    }
+
+    else {
+        return Rotation2d.fromDegrees(gyro.getYaw());
+    }
     }
 
     @Override

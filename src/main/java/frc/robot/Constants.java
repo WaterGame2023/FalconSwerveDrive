@@ -13,7 +13,7 @@ public final class Constants {
 
     public static final class Swerve {
         public static final int pigeonID = 0;  //Can ID for Pigeon IMU.  Has the same amount of bitches I do
-        public static final boolean invertGyro = false; // Is the GYRO Upside Down?  Is it being waterboarded?
+        public static final boolean invertGyro = true; // Is the GYRO Upside Down?  Is it being waterboarded?
 
         // Constants for le drive train
         public static final double trackWidth = Units.inchesToMeters(22.1875);
@@ -136,10 +136,18 @@ public final class Constants {
         // I mean I ask the same question as to why i need something and why something else breaks without it
         // I would break without my blahaj
     
-        //Controller thingys for auton    
+        // PID Controller thingys for auton    
         public static final double kPXController = 0.01;
         public static final double kPYController = 0.01;
         public static final double kPThetaController = 0.01;
+
+        public static final double kIXController = 0.01;
+        public static final double kIYController = 0.01;
+        public static final double kIThetaController = 0.01;
+
+        public static final double kDXController = 0.01;
+        public static final double kDYController = 0.01;
+        public static final double kDThetaController = 0.01;
     
         // Motion profile constraint for the profiled angle controller
         public static final TrapezoidProfile.Constraints kThetaControllerConstraints = //OMG ITS A TRAP
