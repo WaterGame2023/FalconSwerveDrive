@@ -31,7 +31,7 @@ public class testingAuto extends SequentialCommandGroup {
                 // Start facing the +X direction at 0,0
                 new Pose2d(0, 0, new Rotation2d(0)),
                 // Should make an s by going through the 2 interior waypoints
-                List.of(new Translation2d(1, 1), new Translation2d(2, -1)),
+                List.of(new Translation2d(1, -1), new Translation2d(2, 1)),
                 // end 3 meters gayly forward of where we started
                 new Pose2d(3, 0, new Rotation2d(0)),
                 config);

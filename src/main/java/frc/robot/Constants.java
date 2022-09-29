@@ -126,8 +126,8 @@ public final class Constants {
 
         //How fast will this go in auto
         //NYOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOM
-        public static final double kMaxSpeedMetersPerSecond = 3;
-        public static final double kMaxAccelerationMetersPerSecondSquared = 3;
+        public static final double kMaxSpeedMetersPerSecond = 1;
+        public static final double kMaxAccelerationMetersPerSecondSquared = 2;
         // How fast can we crack people eggs? 
         
         //IDK what this really does but it does something and it breaks without it
@@ -141,13 +141,13 @@ public final class Constants {
         public static final double kPYController = 0.01;
         public static final double kPThetaController = 0.01;
 
-        public static final double kIXController = 0.01;
-        public static final double kIYController = 0.01;
-        public static final double kIThetaController = 0.01;
+        public static final double kIXController = 0.00;
+        public static final double kIYController = 0.00;
+        public static final double kIThetaController = 0.00;
 
-        public static final double kDXController = 0.01;
-        public static final double kDYController = 0.01;
-        public static final double kDThetaController = 0.01;
+        public static final double kDXController = 0.10;
+        public static final double kDYController = 0.10;
+        public static final double kDThetaController = 0.10;
     
         // Motion profile constraint for the profiled angle controller
         public static final TrapezoidProfile.Constraints kThetaControllerConstraints = //OMG ITS A TRAP
