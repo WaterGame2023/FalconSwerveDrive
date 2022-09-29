@@ -126,8 +126,8 @@ public final class Constants {
 
         //How fast will this go in auto
         //NYOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOM
-        public static final double kMaxSpeedMetersPerSecond = 1;
-        public static final double kMaxAccelerationMetersPerSecondSquared = 2;
+        public static final double kMaxSpeedMetersPerSecond = 2.5;
+        public static final double kMaxAccelerationMetersPerSecondSquared = 1.5;
         // How fast can we crack people eggs? 
         
         //IDK what this really does but it does something and it breaks without it
