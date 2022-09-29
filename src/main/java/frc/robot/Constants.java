@@ -136,18 +136,22 @@ public final class Constants {
         // I mean I ask the same question as to why i need something and why something else breaks without it
         // I would break without my blahaj
     
-        // PID Controller thingys for auton    
-        public static final double kPXController = 0.01;
-        public static final double kPYController = 0.01;
-        public static final double kPThetaController = 0.01;
+        // PID Controller thingys for auton   
 
+        // PID Values for the X controller 
+        public static final double kPXController = 0.00; // Test starting at 0.01
         public static final double kIXController = 0.00;
-        public static final double kIYController = 0.00;
-        public static final double kIThetaController = 0.00;
+        public static final double kDXController = 0.00; // Test starting at 0.1
 
-        public static final double kDXController = 0.10;
-        public static final double kDYController = 0.10;
-        public static final double kDThetaController = 0.10;
+        // PID Values for the Y controller
+        public static final double kPYController = 0.00; // Test starting at 0.01
+        public static final double kIYController = 0.00;
+        public static final double kDYController = 0.00; // Test starting at 0.1
+
+        // PID Values for the Theta controller
+        public static final double kPThetaController = 0.00; // Test starting at 0.01
+        public static final double kIThetaController = 0.00;
+        public static final double kDThetaController = 0.00; // Test starting at 0.1
     
         // Motion profile constraint for the profiled angle controller
         public static final TrapezoidProfile.Constraints kThetaControllerConstraints = //OMG ITS A TRAP
