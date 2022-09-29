@@ -65,8 +65,8 @@ public final class Constants {
         public static final double driveKA = (0.046425 / 12);
 
         //Max drive speen and max spin speed
-        public static final double maxSpeed = 4.5; //4.5 meters per second
-        public static final double maxAngularVelocity = 11.5; //4.5 meters per second (Presumably)
+        public static final double maxSpeed = 3.5; //4.5 meters per second for regular driving
+        public static final double maxAngularVelocity = 2; //5 for regular driving
 
         //Set the neutral mode for the angle and drive motors
         public static final NeutralMode angleNeutralMode = NeutralMode.Coast;
