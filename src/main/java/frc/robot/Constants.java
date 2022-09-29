@@ -127,7 +127,7 @@ public final class Constants {
         //How fast will this go in auto
         //NYOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOM
         public static final double kMaxSpeedMetersPerSecond = 2.5;
-        public static final double kMaxAccelerationMetersPerSecondSquared = 1.5;
+        public static final double kMaxAccelerationMetersPerSecondSquared = 0.5;
         // How fast can we crack people eggs? 
         
         //IDK what this really does but it does something and it breaks without it
@@ -139,19 +139,19 @@ public final class Constants {
         // PID Controller thingys for auton   
 
         // PID Values for the X controller 
-        public static final double kPXController = 0.00; // Test starting at 0.01
+        public static final double kPXController = 1.0; // Test starting at 0.01
         public static final double kIXController = 0.00;
-        public static final double kDXController = 0.00; // Test starting at 0.1
+        public static final double kDXController = 0.01; // Test starting at 0.1
 
         // PID Values for the Y controller
-        public static final double kPYController = 0.00; // Test starting at 0.01
+        public static final double kPYController = 0.01; // Test starting at 0.01
         public static final double kIYController = 0.00;
-        public static final double kDYController = 0.00; // Test starting at 0.1
+        public static final double kDYController = 0.0; // Test starting at 0.1
 
         // PID Values for the Theta controller
-        public static final double kPThetaController = 0.00; // Test starting at 0.01
+        public static final double kPThetaController = 0.01; // Test starting at 0.01
         public static final double kIThetaController = 0.00;
-        public static final double kDThetaController = 0.00; // Test starting at 0.1
+        public static final double kDThetaController = 0.10; // Test starting at 0.1
     
         // Motion profile constraint for the profiled angle controller
         public static final TrapezoidProfile.Constraints kThetaControllerConstraints = //OMG ITS A TRAP
