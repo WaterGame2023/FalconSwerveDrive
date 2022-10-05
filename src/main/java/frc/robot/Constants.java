@@ -126,7 +126,7 @@ public final class Constants {
 
         //How fast will this go in auto
         //NYOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOM
-        public static final double kMaxSpeedMetersPerSecond = 2.5;
+        public static final double kMaxSpeedMetersPerSecond = 3;
         public static final double kMaxAccelerationMetersPerSecondSquared = 0.5;
         // How fast can we crack people eggs? 
         
@@ -139,12 +139,12 @@ public final class Constants {
         // PID Controller thingys for auton   
 
         // PID Values for the X controller 
-        public static final double kPXController = 1.0; // Test starting at 0.01
+        public static final double kPXController = 0.6; // Test starting at 0.01
         public static final double kIXController = 0.00;
-        public static final double kDXController = 0.01; // Test starting at 0.1
+        public static final double kDXController = 0.0006; // Test starting at 0.1
 
         // PID Values for the Y controller
-        public static final double kPYController = 0.01; // Test starting at 0.01
+        public static final double kPYController = 0.00; // Test starting at 0.01
         public static final double kIYController = 0.00;
         public static final double kDYController = 0.0; // Test starting at 0.1
 
