@@ -26,8 +26,8 @@ public final class Constants {
         public static final double closedLoopRamp = 0.0;
 
         //Gear Ratios for MK4 Modules
-        public static final double driveGearRatio = (8.14 / 1.0); //8.14:1
-        public static final double angleGearRatio = (12.8 / 1.0); //12.8:1
+        public static final double driveGearRatio = (8.14 / 1.0); //8.14:1 For MK4 L1 Modules
+        public static final double angleGearRatio = (12.8 / 1.0); //12.8:1 For MK4 L1 Modules
 
         public static final SwerveDriveKinematics swerveKinematics = new SwerveDriveKinematics(
                 new Translation2d(wheelBase / 2.0, trackWidth / 2.0),
