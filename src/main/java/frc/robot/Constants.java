@@ -139,19 +139,19 @@ public final class Constants {
         // PID Controller thingys for auton   
 
         // PID Values for the X controller 
-        public static final double kPXController = 0.6; // Test starting at 0.01
+        public static final double kPXController = 0.00; // I dont know what I am doing tbh
         public static final double kIXController = 0.00;
-        public static final double kDXController = 0.0006; // Test starting at 0.1
+        public static final double kDXController = 0.00; // IDK why but removing carpet messed this up
 
         // PID Values for the Y controller
-        public static final double kPYController = 0.00; // Test starting at 0.01
+        public static final double kPYController = 0.00; // I dont know what I am doing tbh
         public static final double kIYController = 0.00;
-        public static final double kDYController = 0.0; // Test starting at 0.1
+        public static final double kDYController = 0.00; // IDK why but removing carpet messed this up
 
         // PID Values for the Theta controller
-        public static final double kPThetaController = 0.01; // Test starting at 0.01
+        public static final double kPThetaController = 0.01; // I dont know what I am doing tbh
         public static final double kIThetaController = 0.00;
-        public static final double kDThetaController = 0.10; // Test starting at 0.1
+        public static final double kDThetaController = 0.10; // IDK why but removing carpet messed this up
     
         // Motion profile constraint for the profiled angle controller
         public static final TrapezoidProfile.Constraints kThetaControllerConstraints = //OMG ITS A TRAP
