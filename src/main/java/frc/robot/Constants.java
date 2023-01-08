@@ -132,8 +132,8 @@ public final class Constants {
         // How fast can we crack people eggs? 
         
         //IDK what this really does but it does something and it breaks without it
-        public static final double kMaxAngularSpeedRadiansPerSecond = Math.PI;
-        public static final double kMaxAngularSpeedRadiansPerSecondSquared = Math.PI;
+        public static final double kMaxAngularSpeedRadiansPerSecond = 1; //Changed from Math.PI for testing
+        public static final double kMaxAngularSpeedRadiansPerSecondSquared = 5; //Changed from Math.PI for testing
         // I mean I ask the same question as to why i need something and why something else breaks without it
         // I would break without my blahaj
     
