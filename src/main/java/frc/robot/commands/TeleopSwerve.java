@@ -49,8 +49,8 @@ public class TeleopSwerve extends CommandBase {
 
         //Syntax for this stuff is `variable = TheBoolean ? ifTrue : ifFalse` ^^^^^
 
-        translation = new Translation2d(yAxis, xAxis).times(Constants.Swerve.maxSpeed);
-        rotation = rAxis * Constants.Swerve.maxAngularVelocity;
+        translation = new Translation2d(yAxis, xAxis).times(Constants.Swerve.maxSpeedMultiplier); //Adds option for speed multipler defined in constants
+        rotation = rAxis * Constants.Swerve.maxRotationMultiplier;
         swerveSubsystem.drive(translation, rotation, fieldRelative, openLoop);
     }
 }

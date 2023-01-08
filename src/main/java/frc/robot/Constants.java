@@ -65,9 +65,13 @@ public final class Constants {
         public static final double driveKV = (0.86551 / 12);
         public static final double driveKA = (0.046425 / 12);
 
-        //Max drive speen and max spin speed
-        public static final double maxSpeed = 3.5; //4.5 meters per second for regular driving
-        public static final double maxAngularVelocity = 2; //5 for regular driving
+        //Max drive speed and max speen speed
+        public static final double maxSpeed = 3.5; //Max speed of your bot
+        public static final double maxAngularVelocity = 2; //Max Angular Velocity of your bot
+
+        //Drive control multipliers
+        public static final double maxSpeedMultiplier = 1; //Multipler to slow swerve controls down. EX 1 = 100% multipler, .5 = 50% multiplier
+        public static final double maxRotationMultiplier = 1; //Multiplier to slow down rotation
 
         //Set the neutral mode for the angle and drive motors
         public static final NeutralMode angleNeutralMode = NeutralMode.Coast;
