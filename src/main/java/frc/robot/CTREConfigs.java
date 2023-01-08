@@ -19,7 +19,7 @@ public final class CTREConfigs {
         swerveDriveFXConfig = new TalonFXConfiguration();
         swerveCanCoderConfig = new CANCoderConfiguration();
 
-        // Sets the config for the Steerer/Angle motor current based on values given in the constants file
+        // Sets the config for the Steerer/Angle motor current based on values given in the constants file and sets startup behavior
         SupplyCurrentLimitConfiguration angleSupplyLimit = new SupplyCurrentLimitConfiguration(
             Constants.Swerve.angleEnableCurrentLimit, 
             Constants.Swerve.angleContinuousCurrentLimit, 
@@ -34,7 +34,7 @@ public final class CTREConfigs {
         swerveAngleFXConfig.initializationStrategy = SensorInitializationStrategy.BootToZero;
 
 
-        // Same thing as above but for the fun drive motors
+        // Sets the config for the Drive motor current based on values given in the constants file and sets startup behavior
         SupplyCurrentLimitConfiguration driveSupplyLimit = new SupplyCurrentLimitConfiguration(
             Constants.Swerve.driveEnableCurrentLimit, 
             Constants.Swerve.driveContinuousCurrentLimit, 
@@ -51,7 +51,7 @@ public final class CTREConfigs {
         swerveDriveFXConfig.closedloopRamp = Constants.Swerve.closedLoopRamp;
 
         
-        // Expensive magnet thing encodery position uwu
+        // Configures the CANCoder using values given in the constants file and sets startup behavior
         swerveCanCoderConfig.absoluteSensorRange = AbsoluteSensorRange.Unsigned_0_to_360;
         swerveCanCoderConfig.sensorDirection = Constants.Swerve.canCoderInvert;
         swerveCanCoderConfig.initializationStrategy = SensorInitializationStrategy.BootToAbsolutePosition;
