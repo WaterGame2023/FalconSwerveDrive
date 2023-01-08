@@ -15,20 +15,21 @@ public final class Constants {
         public static final int pigeonID = 0;  //Can ID for Pigeon IMU.  Has the same amount of bitches I do
         public static final boolean invertGyro = true; // Is the GYRO Upside Down?  Is it being waterboarded?
 
-        // Constants for le drive train
+        // Drive train configuration constants
         public static final double trackWidth = Units.inchesToMeters(22.1875);
         public static final double wheelBase = Units.inchesToMeters(26.0);
         public static final double wheelDiameter = Units.inchesToMeters(4.0);
         public static final double wheelCircumference = wheelDiameter * Math.PI;
 
-        //Ramp time for acceleration
+        //Acceleration and deceleration ramp times for the drive base
         public static final double openLoopRamp = 0.25;
         public static final double closedLoopRamp = 0.0;
 
-        //Gear Ratios for MK4 Modules
+        // Swerve module Gear Ratio configuration constants
         public static final double driveGearRatio = (8.14 / 1.0); //8.14:1 For MK4 L1 Modules
         public static final double angleGearRatio = (12.8 / 1.0); //12.8:1 For MK4 L1 Modules
 
+        //Easy reference for the Swerve Drive Kinematics for future use
         public static final SwerveDriveKinematics swerveKinematics = new SwerveDriveKinematics(
                 new Translation2d(wheelBase / 2.0, trackWidth / 2.0),
                 new Translation2d(wheelBase / 2.0, -trackWidth / 2.0),
@@ -36,53 +37,53 @@ public final class Constants {
                 new Translation2d(-wheelBase / 2.0, -trackWidth / 2.0));
 
         //Power Draw/Current Limits for the steering motors
-        public static final int angleContinuousCurrentLimit = 25;
-        public static final int anglePeakCurrentLimit = 40;
-        public static final double anglePeakCurrentDuration = 0.1;
-        public static final boolean angleEnableCurrentLimit = true;
+        public static final int angleContinuousCurrentLimit = 25;  //Limits the continous current draw of the motors
+        public static final int anglePeakCurrentLimit = 40; //Limits the peak current draw of the motors
+        public static final double anglePeakCurrentDuration = 0.1; //Threshold for the peak current draw
+        public static final boolean angleEnableCurrentLimit = true; //Enable or disable the software current limiting on your motors
 
         //Power Draw/Current Limits for the drive motors
-        public static final int driveContinuousCurrentLimit = 35;
-        public static final int drivePeakCurrentLimit = 60;
-        public static final double drivePeakCurrentDuration = 0.1;
-        public static final boolean driveEnableCurrentLimit = true;
+        public static final int driveContinuousCurrentLimit = 35; //Limits the continous current draw of the motors
+        public static final int drivePeakCurrentLimit = 60; //Limits the peak current draw of the motors
+        public static final double drivePeakCurrentDuration = 0.1; //Threshold for the peak current draw
+        public static final boolean driveEnableCurrentLimit = true; //Enable or disable the software current limiting on your motors
 
         //PID Values for the steering motors
-        public static final double angleKP = 0.6;
-        public static final double angleKI = 0.0;
-        public static final double angleKD = 12.0;
-        public static final double angleKF = 0.0;
+        public static final double angleKP = 0.6;  //P value for motors
+        public static final double angleKI = 0.0; //I value for motors
+        public static final double angleKD = 12.0; //D value for motors
+        public static final double angleKF = 0.0; //Feedforward value for motors
 
         //PID Values for the drive motors
-        public static final double driveKP = 0.84099;
-        public static final double driveKI = 0.0;
-        public static final double driveKD = 0.0;
-        public static final double driveKF = 0.0;
+        public static final double driveKP = 0.84099; //P value for motors
+        public static final double driveKI = 0.0; //I value for motors
+        public static final double driveKD = 0.0; //D value for motors
+        public static final double driveKF = 0.0; //Feedforward value for motors
 
         //Characterizarion values as reported by SysID 
         //POSSIBLE FIXME Removing the carpet may have had an effect on the data
-        public static final double driveKS = (0.50245 / 12); //divide by 12 to convert from volts to percent output for CTRE
+        public static final double driveKS = (0.50245 / 12); //divide by 12, used to convert from volts to percent output
         public static final double driveKV = (0.86551 / 12);
         public static final double driveKA = (0.046425 / 12);
 
-        //Max drive speed and max speen speed
-        public static final double maxSpeed = 3.5; //Max speed of your bot
-        public static final double maxAngularVelocity = 2; //Max Angular Velocity of your bot
+        //Max drive speed and max angular velocity of your robot
+        public static final double maxSpeed = 3.5; //Max speed of your bot in meters per second
+        public static final double maxAngularVelocity = 2; //Max Angular Velocity of your bot, fancy way of saying radians per second of rotation
 
         //Drive control multipliers
         public static final double maxSpeedMultiplier = 1; //Multipler to slow swerve controls down. EX 1 = 100% multipler, .5 = 50% multiplier
         public static final double maxRotationMultiplier = 1; //Multiplier to slow down rotation
 
         //Set the neutral mode for the angle and drive motors
-        public static final NeutralMode angleNeutralMode = NeutralMode.Coast;
-        public static final NeutralMode driveNeutralMode = NeutralMode.Brake;
+        public static final NeutralMode angleNeutralMode = NeutralMode.Coast; //Sets angle motors to either coast or brake mode
+        public static final NeutralMode driveNeutralMode = NeutralMode.Brake; //Sets drive motors to either coast or brake mode
 
-        //If the motors are inverted, make it true, but the MK4's are not inverted
-        public static final boolean driveMotorInvert = false;
-        public static final boolean angleMotorInvert = false;
+        //If the motors are inverted or need to be driven backwards
+        public static final boolean driveMotorInvert = false; //Inverts drive motor
+        public static final boolean angleMotorInvert = false; //Inverts angle motor
 
-        //Is the steering CANCoder inverted?
-        public static final boolean canCoderInvert = false;
+        //Is the steering CANCoder inverted
+        public static final boolean canCoderInvert = false; //Make true if reversed
 
         //CAN IDs and angle offsets for each module
         //Config for Module 0, Front left
@@ -90,9 +91,9 @@ public final class Constants {
             public static final int driveMotorID = 4; //CAN ID for the drive motor
             public static final int angleMotorID = 3; //CAN ID for the angle/steerer motor
             public static final int canCoderID = 10; //CAN ID for steer encoder
-            public static final double angleOffset = 296.016; //Angle offset TEST THIS MIGHT BE IN DEGREES NOT RADS
+            public static final double angleOffset = 296.016; //CANCoder Angle offset
             public static final SwerveModuleConstants constants = 
-                new SwerveModuleConstants(driveMotorID, angleMotorID, canCoderID, angleOffset);
+                new SwerveModuleConstants(driveMotorID, angleMotorID, canCoderID, angleOffset); //Sets the constant values for the module
         }
 
         // Config for Module 1, Front Right
@@ -100,9 +101,9 @@ public final class Constants {
             public static final int driveMotorID = 2; //CAN ID for the drive motor
             public static final int angleMotorID = 1; //CAN ID for the angle/steerer motor
             public static final int canCoderID = 9; //CAN ID for steer encoder
-            public static final double angleOffset = 158.730; //Angle offset TEST THIS MIGHT BE IN DEGREES NOT RADS
+            public static final double angleOffset = 158.730; //CANCoder Angle offset
             public static final SwerveModuleConstants constants = 
-                new SwerveModuleConstants(driveMotorID, angleMotorID, canCoderID, angleOffset);
+                new SwerveModuleConstants(driveMotorID, angleMotorID, canCoderID, angleOffset); //Sets the constant values for the module
         }
         
         // Config for Module 2, Back Left
@@ -110,9 +111,9 @@ public final class Constants {
             public static final int driveMotorID = 6; //CAN ID for the drive motor
             public static final int angleMotorID = 5; //CAN ID for the angle/steerer motor
             public static final int canCoderID = 11; //CAN ID for steer encoder
-            public static final double angleOffset = 153.809-180.00; //Angle offset TEST THIS MIGHT BE IN DEGREES NOT RADS
+            public static final double angleOffset = 153.809-180.00; //CANCoder Angle offset
             public static final SwerveModuleConstants constants = 
-                new SwerveModuleConstants(driveMotorID, angleMotorID, canCoderID, angleOffset);
+                new SwerveModuleConstants(driveMotorID, angleMotorID, canCoderID, angleOffset); //Sets the constant values for the module
         }
 
         // Config for Module 3, Back Right
@@ -120,29 +121,24 @@ public final class Constants {
             public static final int driveMotorID = 8; //CAN ID for the drive motor
             public static final int angleMotorID = 7; //CAN ID for the angle/steerer motor
             public static final int canCoderID = 12; //CAN ID for steer encoder
-            public static final double angleOffset = 72.158; //Angle offset TEST THIS MIGHT BE IN DEGREES NOT RADS
+            public static final double angleOffset = 72.158; //CANCoder Angle offset
             public static final SwerveModuleConstants constants = 
-                new SwerveModuleConstants(driveMotorID, angleMotorID, canCoderID, angleOffset);
+                new SwerveModuleConstants(driveMotorID, angleMotorID, canCoderID, angleOffset); //Sets the constant values for the module
         }
 
     }
 
     public static final class AutoConstants {
 
-        //How fast will this go in auto
+        //How fast will the bot go in auto
         //NYOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOM
         public static final double kMaxSpeedMetersPerSecond = 3;
         public static final double kMaxAccelerationMetersPerSecondSquared = 0.5;
-        // How fast can we crack people eggs? 
         
-        //IDK what this really does but it does something and it breaks without it
         public static final double kMaxAngularSpeedRadiansPerSecond = 1; //Changed from Math.PI for testing
         public static final double kMaxAngularSpeedRadiansPerSecondSquared = 5; //Changed from Math.PI for testing
-        // I mean I ask the same question as to why i need something and why something else breaks without it
-        // I would break without my blahaj
     
-        // PID Controller thingys for auton   
-
+        // PID Controller values for auton   
         // PID Values for the X controller 
         public static final double kPXController = 0.00; // I dont know what I am doing tbh
         public static final double kIXController = 0.00;
@@ -159,7 +155,7 @@ public final class Constants {
         public static final double kDThetaController = 0.10; // IDK why but removing carpet messed this up
     
         // Motion profile constraint for the profiled angle controller
-        public static final TrapezoidProfile.Constraints kThetaControllerConstraints = //OMG ITS A TRAP
+        public static final TrapezoidProfile.Constraints kThetaControllerConstraints =
             new TrapezoidProfile.Constraints(
                 kMaxAngularSpeedRadiansPerSecond, kMaxAngularSpeedRadiansPerSecondSquared);
       }
