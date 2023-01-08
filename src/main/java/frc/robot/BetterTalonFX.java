@@ -1,5 +1,7 @@
 package frc.robot;
 
+//This whole file probably doesn't need to be here, but I have it here just in case I decide to use it in the future
+
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
@@ -43,7 +45,7 @@ public class BetterTalonFX {
     talon.stopMotor();
   }
 
-  // Percent in [-1, 1]
+  // Percent in range of [-1, 1]
   public void setPower(double percent) {
     talon.set(ControlMode.PercentOutput, percent);
   }
