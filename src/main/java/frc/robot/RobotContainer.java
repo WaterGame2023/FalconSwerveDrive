@@ -34,14 +34,14 @@ public class RobotContainer {
   private final JoystickButton zeroGyro = new JoystickButton(driver, XboxController.Button.kY.value);
 
   // at this point go touch grass and make a sussystem
-  private final Swerve s_Swerve = new Swerve();
+  private final Swerve swerveSubsystem = new Swerve();
 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     boolean fieldRelative = true; // Is it field oriented?  if not say false and you will be terminated
     boolean openLoop = true;
-    s_Swerve.setDefaultCommand(new TeleopSwerve(s_Swerve, driver, translationAxis, strafeAxis, rotationAxis, fieldRelative, openLoop));
+    swerveSubsystem.setDefaultCommand(new TeleopSwerve(swerveSubsystem, driver, translationAxis, strafeAxis, rotationAxis, fieldRelative, openLoop));
 
     // Configure the button bindings
     configureButtonBindings();
@@ -55,7 +55,7 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     /* Driver Buttons */
-    zeroGyro.whenPressed(new InstantCommand(() -> s_Swerve.zeroGyro()));
+    zeroGyro.whenPressed(new InstantCommand(() -> swerveSubsystem.zeroGyro()));
   }
 
   /**

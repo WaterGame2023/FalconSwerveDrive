@@ -18,44 +18,42 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 
 public class testingAuto extends SequentialCommandGroup {
-    public testingAuto(Swerve s_Swerve){
-        TrajectoryConfig config =
-            new TrajectoryConfig(
-                    Constants.AutoConstants.kMaxSpeedMetersPerSecond,
-                    Constants.AutoConstants.kMaxAccelerationMetersPerSecondSquared)
-                .setKinematics(Constants.Swerve.swerveKinematics);
+    public testingAuto(Swerve swerveSubsystem){
+        TrajectoryConfig config = new TrajectoryConfig(
+                Constants.AutoConstants.kMaxSpeedMetersPerSecond, //Sets Max speed of the bot in auton
+                Constants.AutoConstants.kMaxAccelerationMetersPerSecondSquared) //Sets Max acceleration of the bot in auton
+                    .setKinematics(Constants.Swerve.swerveKinematics); //Gets all the kinematics info for swerve
 
         // Basic trajectory using the traj generator tool built into WPILib
-        Trajectory testingTrajectory =
-            TrajectoryGenerator.generateTrajectory(
-                // Start facing the +X direction at 0,0
+        Trajectory testingTrajectory = TrajectoryGenerator.generateTrajectory(
+                // Sets the start direction
                 new Pose2d(0, 0, new Rotation2d(0)),
-                // Should make an s by going through the 2 interior waypoints
-                List.of(new Translation2d(1, 0), new Translation2d(2, 0)),
-                // end 3 meters gayly forward of where we started
-                new Pose2d(3, 0, new Rotation2d(0)),
+                // Should go in a straight line
+                List.of(
+                    new Translation2d(1, 0), //1st point 1 meter ahead of where we started
+                    new Translation2d(2, 0)), //2nd point 2 meters ahead of where we started
+                new Pose2d(3, 0, new Rotation2d(0)), //Sets end pose 3 meters ahead of starting point
                 config);
 
-        var thetaController =
-            new ProfiledPIDController(
-                Constants.AutoConstants.kPThetaController, Constants.AutoConstants.kIThetaController, Constants.AutoConstants.kDThetaController, Constants.AutoConstants.kThetaControllerConstraints);
+        PIDController xController = new PIDController(Constants.AutoConstants.kPXController, 0, 0);
+        PIDController yController = new PIDController(Constants.AutoConstants.kPYController, 0, 0);
+        ProfiledPIDController thetaController = new ProfiledPIDController(
+                Constants.AutoConstants.kPThetaController, 0, 0, Constants.AutoConstants.kThetaControllerConstraints);
         thetaController.enableContinuousInput(-Math.PI, Math.PI);
 
-        SwerveControllerCommand swerveControllerCommand =
-            new SwerveControllerCommand(
+        SwerveControllerCommand swerveControllerCommand = new SwerveControllerCommand(
                 testingTrajectory,
-                s_Swerve::getPose,
+                swerveSubsystem::getPose,
                 Constants.Swerve.swerveKinematics,
-                new PIDController(Constants.AutoConstants.kPXController, Constants.AutoConstants.kIXController, Constants.AutoConstants.kDXController),
-                new PIDController(Constants.AutoConstants.kPYController, Constants.AutoConstants.kIYController, Constants.AutoConstants.kIYController),
+                xController,
+                yController,
                 thetaController,
-                s_Swerve::setModuleStates,
-                s_Swerve);
+                swerveSubsystem::setModuleStates,
+                swerveSubsystem);
 
 
         addCommands(
-            new InstantCommand(() -> s_Swerve.resetOdometry(testingTrajectory.getInitialPose())),
-            swerveControllerCommand
-        );
+            new InstantCommand(() -> swerveSubsystem.resetOdometry(testingTrajectory.getInitialPose())),
+            swerveControllerCommand);
     }
 }
