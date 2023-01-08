@@ -65,6 +65,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // the testAuto command will run in auton
-    return new velocityAuto();
+    return new testingAuto(swerveSubsystem);
   }
 }
