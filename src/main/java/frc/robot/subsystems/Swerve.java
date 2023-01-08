@@ -8,7 +8,7 @@
 // please increase the below counter as a
 // warning for the next unfortunate soul who comes across this
 //
-// total_hours_wasted_on_swerve = 254
+// total_hours_wasted_on_swerve = too many to count
 //
 package frc.robot.subsystems;
 
