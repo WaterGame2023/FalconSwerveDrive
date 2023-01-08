@@ -140,24 +140,23 @@ public final class Constants {
     
         // PID Controller values for auton   
         // PID Values for the X controller 
-        public static final double kPXController = 0.00; // I dont know what I am doing tbh
-        public static final double kIXController = 0.00;
-        public static final double kDXController = 0.00; // IDK why but removing carpet messed this up
+        public static final double kPXController = 0.00; // Should only need to adjust this
+        public static final double kIXController = 0.00; //Shouldn't need to adjust this right away
+        public static final double kDXController = 0.00; //Shouldn't need to adjust this right away
 
         // PID Values for the Y controller
-        public static final double kPYController = 0.00; // I dont know what I am doing tbh
-        public static final double kIYController = 0.00;
-        public static final double kDYController = 0.00; // IDK why but removing carpet messed this up
+        public static final double kPYController = 0.00; // Should only need to adjust this
+        public static final double kIYController = 0.00; //Shouldn't need to adjust this right away
+        public static final double kDYController = 0.00; //Shouldn't need to adjust this right away
 
         // PID Values for the Theta controller
-        public static final double kPThetaController = 0.01; // I dont know what I am doing tbh
-        public static final double kIThetaController = 0.00;
-        public static final double kDThetaController = 0.10; // IDK why but removing carpet messed this up
+        public static final double kPThetaController = 0.00; // Should only need to adjust this
+        public static final double kIThetaController = 0.00; //Shouldn't need to adjust this right away
+        public static final double kDThetaController = 0.00; //Shouldn't need to adjust this right away
     
         // Motion profile constraint for the profiled angle controller
         public static final TrapezoidProfile.Constraints kThetaControllerConstraints =
-            new TrapezoidProfile.Constraints(
-                kMaxAngularSpeedRadiansPerSecond, kMaxAngularSpeedRadiansPerSecondSquared);
+            new TrapezoidProfile.Constraints(kMaxAngularSpeedRadiansPerSecond, kMaxAngularSpeedRadiansPerSecondSquared);
       }
 
 }
