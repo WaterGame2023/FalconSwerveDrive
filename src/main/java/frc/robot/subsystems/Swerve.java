@@ -70,7 +70,7 @@ public class Swerve extends SubsystemBase {
         }
     }    
 
-    // Stuff to make the swerve command work in auton
+    // Stuff to make the swerve drive work in auton
     public void setModuleStates(SwerveModuleState[] desiredStates) {
         SwerveDriveKinematics.desaturateWheelSpeeds(desiredStates, Constants.Swerve.maxSpeed);
         
@@ -105,7 +105,7 @@ public class Swerve extends SubsystemBase {
       return Rotation2d.fromDegrees(gyro.getFusedHeading());
     }
 
-    // Need to invert for navX
+    // Need to invert readings when using the navX on our bot
     if (Constants.Swerve.invertGyro) {
     return Rotation2d.fromDegrees(360.0 - gyro.getYaw());
     }
