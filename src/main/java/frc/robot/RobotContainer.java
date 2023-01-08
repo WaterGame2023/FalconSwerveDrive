@@ -22,26 +22,26 @@ import frc.robot.subsystems.*;
  * subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
-  // uwu what we doing to contowol da wowobot
+  // Creates new joystick object for the driver on port 0
   private final Joystick driver = new Joystick(0);
 
-  // uwu dis is how we dwive de rowobot
-  private final int translationAxis = XboxController.Axis.kLeftY.value; //dwive fowoard with da y stick
-  private final int strafeAxis = XboxController.Axis.kLeftX.value; //slidey with da x stick
-  private final int rotationAxis = XboxController.Axis.kRightX.value; //add a little rotation in there
+  // Creates the Axis variables mapped to various joysticks on the gamepad
+  private final int translationAxis = XboxController.Axis.kLeftY.value; //Y axis on left joystick, front to back motion
+  private final int strafeAxis = XboxController.Axis.kLeftX.value; //X axis on the left joystick, left to right motion
+  private final int rotationAxis = XboxController.Axis.kRightX.value; //X axis on the right joystick, turns the robot
 
-  // the driver gets to push buttons
-  private final JoystickButton zeroGyro = new JoystickButton(driver, XboxController.Button.kY.value);
+  // Creates button mappings on the controller
+  private final JoystickButton zeroGyro = new JoystickButton(driver, XboxController.Button.kY.value); // Y button on the controller to zero the gyro
 
-  // at this point go touch grass and make a sussystem
+  // Define the Swerve subsystem as swerveSubsystem
   private final Swerve swerveSubsystem = new Swerve();
 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
-    boolean fieldRelative = true; // Is it field oriented?  if not say false and you will be terminated
-    boolean openLoop = true;
-    swerveSubsystem.setDefaultCommand(new TeleopSwerve(swerveSubsystem, driver, translationAxis, strafeAxis, rotationAxis, fieldRelative, openLoop));
+    boolean fieldRelative = true; // Do you want field oriented control?
+    boolean openLoop = true; // Do you want acceleration on the robot
+    swerveSubsystem.setDefaultCommand(new TeleopSwerve(swerveSubsystem, driver, translationAxis, strafeAxis, rotationAxis, fieldRelative, openLoop));  //Default command to drive the bot
 
     // Configure the button bindings
     configureButtonBindings();
@@ -64,7 +64,7 @@ public class RobotContainer {
    * @return the command to run in autonomous
    */
   public Command getAutonomousCommand() {
-    // the testAuto command will run in auton
+    // the testAuto routine will run in auton
     return new testingAuto(swerveSubsystem);
   }
 }
