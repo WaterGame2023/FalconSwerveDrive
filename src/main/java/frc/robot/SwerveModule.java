@@ -36,7 +36,7 @@ public class SwerveModule {
         mAngleMotor = new TalonFX(moduleConstants.angleMotorID);
         configAngleMotor();
 
-        // Configure the drive mowoter
+        // Configure the drive motor
         mDriveMotor = new TalonFX(moduleConstants.driveMotorID);
         configDriveMotor();
 
