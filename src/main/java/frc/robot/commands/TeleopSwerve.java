@@ -46,11 +46,10 @@ public class TeleopSwerve extends CommandBase {
         //Otherwise if the stick value is greater than the deadband, Axis = the stick value
         xAxis = (Math.abs(xAxis) < Constants.stickDeadband) ? 0 : xAxis;
         rAxis = (Math.abs(rAxis) < Constants.stickDeadband) ? 0 : rAxis;
-
         //Syntax for this stuff is `variable = TheBoolean ? ifTrue : ifFalse` ^^^^^
 
-        translation = new Translation2d(yAxis, xAxis).times(Constants.Swerve.maxSpeedMultiplier); //Adds option for speed multipler defined in constants
-        rotation = rAxis * Constants.Swerve.maxRotationMultiplier;
+        translation = new Translation2d(yAxis, xAxis).times(Constants.Swerve.maxSpeed); //Adds option for speed multipler defined in constants
+        rotation = rAxis * Constants.Swerve.maxAngularVelocity;
         swerveSubsystem.drive(translation, rotation, fieldRelative, openLoop);
     }
 }
