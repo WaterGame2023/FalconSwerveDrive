@@ -24,6 +24,7 @@ import frc.robot.subsystems.*;
 public class RobotContainer {
   // Creates new joystick object for the driver on port 0
   private final Joystick driver = new Joystick(0);
+  private final Joystick arm = new Joystick(1);
 
   // Creates the Axis variables mapped to various joysticks on the gamepad
   private final int translationAxis = XboxController.Axis.kLeftY.value; //Y axis on left joystick, front to back motion
@@ -35,6 +36,7 @@ public class RobotContainer {
 
   // Define the Swerve subsystem as swerveSubsystem
   private final Swerve swerveSubsystem = new Swerve();
+  private final ArmSubsystem armSubsystem = new ArmSubsystem();
 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
@@ -56,6 +58,7 @@ public class RobotContainer {
   private void configureButtonBindings() {
     /* Driver Buttons */
     zeroGyro.whenPressed(new InstantCommand(() -> swerveSubsystem.zeroGyro()));
+    
   }
 
   /**
