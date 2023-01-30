@@ -16,20 +16,20 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 /** Add your docs here. */
 public class ArmSubsystem extends SubsystemBase {
 
- private CANSparkMax shoulderMotor = new CANSparkMax(21, MotorType.kBrushless);
+ private TalonFX shoulderFalcon = new TalonFX(21);
  private CANSparkMax elbowMotor = new CANSparkMax(22, MotorType.kBrushless);
- private TalonFX wristMotor = new TalonFX(23);
+ private CANSparkMax wristMotor = new CANSparkMax(23, MotorType.kBrushless);
 
   public void setSpeeds(double shoulderSpeed, double elbowSpeed, double wristSpeed) {
-    shoulderMotor.set(shoulderSpeed);
+    shoulderFalcon.set(ControlMode.PercentOutput, shoulderSpeed);    
     elbowMotor.set(elbowSpeed);
-    wristMotor.set(ControlMode.PercentOutput, wristSpeed);
+    wristMotor.set(wristSpeed);
 
   }
 
 public void stopMotor() {
-  shoulderMotor.set(0);
+  shoulderFalcon.set(ControlMode.PercentOutput, 0);
   elbowMotor.set(0);
-  wristMotor.set(ControlMode.PercentOutput, 0);
+  wristMotor.set(0);
 }
 }
