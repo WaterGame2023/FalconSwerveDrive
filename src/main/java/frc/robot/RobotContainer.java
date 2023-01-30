@@ -44,7 +44,7 @@ public class RobotContainer {
     boolean fieldRelative = true; // Do you want field oriented control?
     boolean openLoop = true; // Do you want acceleration on the robot
     swerveSubsystem.setDefaultCommand(new TeleopSwerve(swerveSubsystem, driver, translationAxis, strafeAxis, rotationAxis, fieldRelative, openLoop));  //Default command to drive the bot
-
+    armSubsystem.setDefaultCommand(new ArmManual(armSubsystem, arm, 0, 1, 2)); //Default Manual Arm Command
     // Configure the button bindings
     configureButtonBindings();
   }
