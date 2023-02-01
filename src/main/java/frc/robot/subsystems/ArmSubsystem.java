@@ -37,8 +37,6 @@ wristMotor.setOpenLoopRampRate(.25);
 wristMotor.setClosedLoopRampRate(25);
 }
 
- //Add ramp speed of .25 seconds to each motor
-
   public void setSpeeds(double shoulderSpeed, double elbowSpeed, double wristSpeed) {
     shoulderFalcon.set(ControlMode.PercentOutput, shoulderSpeed);    
     elbowMotor.set(elbowSpeed);
