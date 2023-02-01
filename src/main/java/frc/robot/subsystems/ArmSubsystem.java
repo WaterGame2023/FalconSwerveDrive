@@ -46,15 +46,15 @@ public double getWristAngle() {
 }
 
 public double getShoulderDegrees() {
-  return shoulderFalcon.getSelectedSensorPosition() * 360 / 4096;
+  return shoulderFalcon.getSelectedSensorPosition() * 360 / 4096; //TODO Compensate for gearbox ratio
 }
 
 public double getElbowDegrees() {
-  return elbowMotor.getEncoder().getPosition() * 360 / 42;
+  return elbowMotor.getEncoder().getPosition() * 360 / 42; //TODO Compensate for gearbox ratio
 }
 
 public double getWristDegrees() {
-  return wristMotor.getEncoder().getPosition() * 360 / 42;
+  return wristMotor.getEncoder().getPosition() * 360 / 42; //TODO Compensate for gearbox ratio
 }
 
 }
