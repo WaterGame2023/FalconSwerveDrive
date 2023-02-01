@@ -9,6 +9,7 @@ import edu.wpi.first.math.controller.PIDController;
 import frc.robot.subsystems.*;
 import frc.robot.Constants;
 import frc.robot.Constants.Swerve.Arm;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 public class ArmHigh extends CommandBase {
@@ -58,6 +59,10 @@ public class ArmHigh extends CommandBase {
     System.out.println("Shoulder Angle: " + m_armSubsystem.getShoulderAngle());
     System.out.println("Elbow Angle: " + m_armSubsystem.getElbowAngle());
     System.out.println("Wrist Angle: " + m_armSubsystem.getWristAngle());
+
+    SmartDashboard.putNumber("Shoulder Angle: ", m_armSubsystem.getShoulderAngle());
+    SmartDashboard.putNumber("Elbow Angle: ", m_armSubsystem.getElbowAngle());
+    SmartDashboard.putNumber("Wrist Angle: ", m_armSubsystem.getWristAngle());
   }
 
   // Called once the command ends or is interrupted.
