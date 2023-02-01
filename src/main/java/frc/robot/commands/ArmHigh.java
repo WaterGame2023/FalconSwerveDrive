@@ -43,7 +43,7 @@ public class ArmHigh extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    System.out.println("ArmHigh command started. YEE HAW ITS HIGH NOW!!!!");
+    System.out.println("ArmHigh command started. Everone stand back, I know what I'm doing. Trust me.");
   }
 
   // Called every time the scheduler runs while the command is scheduled.
