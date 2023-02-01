@@ -7,6 +7,8 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.math.controller.PIDController;
 import frc.robot.subsystems.*;
+import frc.robot.Constants;
+import frc.robot.Constants.Swerve.Arm;
 
 
 public class ArmHigh extends CommandBase {
@@ -15,9 +17,9 @@ public class ArmHigh extends CommandBase {
   private final PIDController shoulderPIDController;
   private final PIDController elbowPIDController;
   private final PIDController wristPIDController;
-  private final double shoulderHighAngle;
+/*   private final double shoulderHighAngle;
   private final double elbowHighAngle;
-  private final double wristHighAngle;
+  private final double wristHighAngle; */
 
     /** Creates a new ArmHigh. */
     public ArmHigh(ArmSubsystem m_armSubsystem) {
@@ -26,22 +28,22 @@ public class ArmHigh extends CommandBase {
 
           this.shoulderPIDController = new PIDController(0.1, 0, 0);
           shoulderPIDController.setTolerance(.1);
-          shoulderPIDController.setSetpoint(shoulderHighAngle);
+          shoulderPIDController.setSetpoint(Arm.shoulderHighPosition);
 
           this.elbowPIDController = new PIDController(0.1, 0, 0);
           elbowPIDController.setTolerance(.1);
-          elbowPIDController.setSetpoint(elbowHighAngle);
+          elbowPIDController.setSetpoint(Arm.elbowHighPosition);
 
           this.wristPIDController = new PIDController(0.1, 0, 0);
           wristPIDController.setTolerance(.1);
-          wristPIDController.setSetpoint(wristHighAngle);
+          wristPIDController.setSetpoint(Arm.wristHighPosition);
     }
     
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    System.out.println("ArmHigh command started");
+    System.out.println("ArmHigh command started. YEE HAW ITS HIGH NOW!!!!");
   }
 
   // Called every time the scheduler runs while the command is scheduled.
