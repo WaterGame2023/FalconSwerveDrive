@@ -32,4 +32,29 @@ public void stopMotor() {
   elbowMotor.set(0);
   wristMotor.set(0);
 }
+
+public double getShoulderAngle() {
+  return shoulderFalcon.getSelectedSensorPosition();
+}
+
+public double getElbowAngle() {
+  return elbowMotor.getEncoder().getPosition();
+}
+
+public double getWristAngle() {
+  return wristMotor.getEncoder().getPosition();
+}
+
+public double getShoulderDegrees() {
+  return shoulderFalcon.getSelectedSensorPosition() * 360 / 4096;
+}
+
+public double getElbowDegrees() {
+  return elbowMotor.getEncoder().getPosition() * 360 / 42;
+}
+
+public double getWristDegrees() {
+  return wristMotor.getEncoder().getPosition() * 360 / 42;
+}
+
 }
