@@ -33,6 +33,10 @@ public class RobotContainer {
 
   // Creates button mappings on the controller
   private final JoystickButton zeroGyro = new JoystickButton(driver, XboxController.Button.kY.value); // Y button on the controller to zero the gyro
+  private final JoystickButton armUpAndOut = new JoystickButton(arm, 2); // A button on the controller to move the arm up and out
+  private final JoystickButton armDownAndOut = new JoystickButton(arm, 3); // A button on the controller to move the arm up and out
+  private final JoystickButton armStore = new JoystickButton(arm, 4); // A button on the controller to move the arm up and out
+
 
   // Define the Swerve subsystem as swerveSubsystem
   private final Swerve swerveSubsystem = new Swerve();
@@ -58,7 +62,10 @@ public class RobotContainer {
   private void configureButtonBindings() {
     /* Driver Buttons */
     zeroGyro.whenPressed(new InstantCommand(() -> swerveSubsystem.zeroGyro()));
-    
+    /* Arm Buttons */
+    armUpAndOut.whenPressed(new ArmHigh(armSubsystem));
+    armDownAndOut.whenPressed(new ArmLow(armSubsystem));
+    armStore.whenPressed(new PutThoseGrippersAway(armSubsystem));
   }
 
   /**
