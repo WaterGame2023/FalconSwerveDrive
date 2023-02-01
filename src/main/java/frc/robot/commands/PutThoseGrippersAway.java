@@ -44,7 +44,7 @@ public class PutThoseGrippersAway extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    System.out.println("PutThoseGrippersAway command started. Everone stand back, I know what I'm doing. Trust me.");
+    System.out.println("PutThoseGrippersAway(Arm Storage) command started. Everone stand back, I know what I'm doing. Trust me.");
   }
 
   // Called every time the scheduler runs while the command is scheduled.
