@@ -30,7 +30,7 @@ public class ArmHigh extends CommandBase {
           shoulderPIDController.setTolerance(.1);
           shoulderPIDController.setSetpoint(Arm.shoulderHighPosition);
 
-          this.elbowPIDController = new PIDController(0.1, 0, 0);
+          this.elbowPIDController = new PIDController(Arm.elbowKP, Arm.elbowKI, Arm.elbowKP);
           elbowPIDController.setTolerance(.1);
           elbowPIDController.setSetpoint(Arm.elbowHighPosition);
 
