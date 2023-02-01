@@ -104,12 +104,15 @@ public final class Constants {
             public static final int gripperEncoderID = 34; //CAN ID for the gripper encoder assuming we use CAN based
 
             public static final double shoulderHighPosition = 0; //The high position of the shoulder
+            public static final double shoulderStorePosition = 0; //The high position of the elbow
             public static final double shoulderLowPosition = 0; //The low position of the shoulder
 
             public static final double elbowHighPosition = 0; //The high position of the elbow
+            public static final double elbowStorePosition = 0; //The high position of the elbow
             public static final double elbowLowPosition = 0; //The low position of the elbow
 
             public static final double wristHighPosition = 0; //The high position of the wrist
+            public static final double wristStorePosition = 0; //The high position of the elbow
             public static final double wristLowPosition = 0; //The low position of the wrist
 
             public static final double gripperOpenPosition = 0; //The open position of the gripper
