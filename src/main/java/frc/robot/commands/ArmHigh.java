@@ -26,7 +26,7 @@ public class ArmHigh extends CommandBase {
           this.m_armSubsystem = m_armSubsystem;
           addRequirements(m_armSubsystem);
 
-          this.shoulderPIDController = new PIDController(0.1, 0, 0);
+          this.shoulderPIDController = new PIDController(Arm.shoulderKP, Arm.shoulderKI, Arm.shoulderKP);
           shoulderPIDController.setTolerance(.1);
           shoulderPIDController.setSetpoint(Arm.shoulderHighPosition);
 
@@ -34,7 +34,7 @@ public class ArmHigh extends CommandBase {
           elbowPIDController.setTolerance(.1);
           elbowPIDController.setSetpoint(Arm.elbowHighPosition);
 
-          this.wristPIDController = new PIDController(0.1, 0, 0);
+          this.wristPIDController = new PIDController(Arm.wristKP, Arm.wristKI, Arm.wristKP);
           wristPIDController.setTolerance(.1);
           wristPIDController.setSetpoint(Arm.wristHighPosition);
     }
