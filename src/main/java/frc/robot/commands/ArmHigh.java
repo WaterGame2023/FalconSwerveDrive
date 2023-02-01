@@ -15,9 +15,9 @@ public class ArmHigh extends CommandBase {
   private final PIDController shoulderPIDController;
   private final PIDController elbowPIDController;
   private final PIDController wristPIDController;
-  private final double shoulderHighAngle;
-  private final double elbowHighAngle;
-  private final double wristHighAngle;
+  public final double shoulderHighAngle;
+  public final double elbowHighAngle;
+  public final double wristHighAngle;
 
     /** Creates a new ArmHigh. */
     public ArmHigh(ArmSubsystem m_armSubsystem) {
