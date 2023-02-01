@@ -54,6 +54,10 @@ public class ArmHigh extends CommandBase {
     double wristSpeed = wristPIDController.calculate(m_armSubsystem.getWristAngle());
 
     m_armSubsystem.setSpeeds(shoulderSpeed, elbowSpeed, wristSpeed);
+
+    System.out.println("Shoulder Angle: " + m_armSubsystem.getShoulderAngle());
+    System.out.println("Elbow Angle: " + m_armSubsystem.getElbowAngle());
+    System.out.println("Wrist Angle: " + m_armSubsystem.getWristAngle());
   }
 
   // Called once the command ends or is interrupted.
