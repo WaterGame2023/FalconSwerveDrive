@@ -7,11 +7,13 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import edu.wpi.first.math.controller.PIDController;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.revrobotics.CANSparkMax.IdleMode;
 
 /** Add your docs here. */
 public class ArmSubsystem extends SubsystemBase {
@@ -19,6 +21,23 @@ public class ArmSubsystem extends SubsystemBase {
  private TalonFX shoulderFalcon = new TalonFX(21);
  private CANSparkMax elbowMotor = new CANSparkMax(22, MotorType.kBrushless);
  private CANSparkMax wristMotor = new CANSparkMax(23, MotorType.kBrushless);
+
+//Set neuteral mode to brake for each motor
+public void init() {
+shoulderFalcon.setNeutralMode(NeutralMode.Brake);
+elbowMotor.setIdleMode(IdleMode.kBrake);
+
+//Set open and closed loop ramp rates
+wristMotor.setIdleMode(IdleMode.kBrake);
+shoulderFalcon.configOpenloopRamp(.25);
+shoulderFalcon.configClosedloopRamp(.25);
+elbowMotor.setOpenLoopRampRate(.25);
+elbowMotor.setClosedLoopRampRate(.25);
+wristMotor.setOpenLoopRampRate(.25);
+wristMotor.setClosedLoopRampRate(25);
+}
+
+ //Add ramp speed of .25 seconds to each motor
 
   public void setSpeeds(double shoulderSpeed, double elbowSpeed, double wristSpeed) {
     shoulderFalcon.set(ControlMode.PercentOutput, shoulderSpeed);    
