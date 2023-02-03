@@ -12,6 +12,7 @@
 //
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.sensors.Pigeon2;
 //import com.ctre.phoenix.sensors.PigeonIMU;
 import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.SPI;
@@ -33,18 +34,17 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class Swerve extends SubsystemBase {
     public SwerveDriveOdometry swerveOdometry;
     public SwerveModule[] mSwerveMods;
-    public AHRS gyro;
+    public Pigeon2 gyro;
 
     public Swerve() {
-        gyro = new AHRS(SPI.Port.kMXP, (byte) 1000);
-        gyro.zeroYaw();
+        gyro = new Pigeon2(Constants.Swerve.pigeonID);
+        gyro.configFactoryDefault();
+        zeroGyro();
 
         Timer.delay(1.0);
         resetModulesToAbsolute();
         
-        swerveOdometry = new SwerveDriveOdometry(Constants.Swerve.swerveKinematics, Rotation2d.fromDegrees(gyro.getFusedHeading()), getModulePositions());
-        //swerveOdometry = new SwerveDriveOdometry(Constants.Swerve.swerveKinematics, getYaw());
-
+        swerveOdometry = new SwerveDriveOdometry(Constants.Swerve.swerveKinematics, getYaw(), getModulePositions());
         mSwerveMods = new SwerveModule[] {
             new SwerveModule(0, Constants.Swerve.Mod0.constants),
             new SwerveModule(1, Constants.Swerve.Mod1.constants),
@@ -107,26 +107,16 @@ public class Swerve extends SubsystemBase {
         return positions;
     }
 
+
     public void zeroGyro(){
-    gyro.zeroYaw();
+        gyro.setYaw(0);
     }
+
 
     public Rotation2d getYaw() {
-    if (gyro.isMagnetometerCalibrated()) {
-     // will only get valid fused headings if the magnetometer is calibrated
-      return Rotation2d.fromDegrees(gyro.getFusedHeading());
+        return (Constants.Swerve.invertGyro) ? Rotation2d.fromDegrees(360 - gyro.getYaw()) : Rotation2d.fromDegrees(gyro.getYaw());
     }
-
-    // Need to invert readings when using the navX on our bot
-    if (Constants.Swerve.invertGyro) {
-    return Rotation2d.fromDegrees(360.0 - gyro.getYaw());
-    }
-
-    else {
-        return Rotation2d.fromDegrees(gyro.getYaw());
-    }
-    }
-
+    
     public void resetModulesToAbsolute(){
         for(SwerveModule mod : mSwerveMods){
             mod.resetToAbsolute();
