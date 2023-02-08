@@ -104,30 +104,30 @@ public final class Constants {
             public static final int wristEncoderID = 33; //CAN ID for the wrist encoder assuming we use CAN based
             public static final int gripperEncoderID = 34; //CAN ID for the gripper encoder assuming we use CAN based
 
-            public static final double shoulderHighPosition = 0; //The high position of the shoulder
+            public static final double shoulderHighPosition = -48265; //The high position of the shoulder
             public static final double shoulderStorePosition = 0; //The high position of the elbow
-            public static final double shoulderLowPosition = 0; //The low position of the shoulder
+            public static final double shoulderLowPosition = -7177; //The low position of the shoulder
 
-            public static final double elbowHighPosition = 0; //The high position of the elbow
+            public static final double elbowHighPosition = -59.096073150634766; //The high position of the elbow
             public static final double elbowStorePosition = 0; //The high position of the elbow
-            public static final double elbowLowPosition = 0; //The low position of the elbow
+            public static final double elbowLowPosition = -37.14250183105469; //The low position of the elbow
 
-            public static final double wristHighPosition = 0; //The high position of the wrist
+            public static final double wristHighPosition = -61.929683685302734; //The high position of the wrist
             public static final double wristStorePosition = 0; //The high position of the elbow
-            public static final double wristLowPosition = 0; //The low position of the wrist
+            public static final double wristLowPosition = -60.92958450317383; //The low position of the wrist
 
             public static final double gripperOpenPosition = 0; //The open position of the gripper
             public static final double gripperClosedPosition = 0; //The closed position of the gripper
 
-            public static final double shoulderKP = 0; //P value for shoulder motor
+            public static final double shoulderKP = 1; //P value for shoulder motor
             public static final double shoulderKI = 0; //I value for shoulder motor
             public static final double shoulderKD = 0; //D value for shoulder motor
 
-            public static final double elbowKP = 0; //P value for elbow motor
+            public static final double elbowKP = 1; //P value for elbow motor
             public static final double elbowKI = 0; //I value for elbow motor
             public static final double elbowKD = 0; //D value for elbow motor
 
-            public static final double wristKP = 0; //P value for wrist motor
+            public static final double wristKP = 1; //P value for wrist motor
             public static final double wristKI = 0; //I value for wrist motor
             public static final double wristKD = 0; //D value for wrist motor
 

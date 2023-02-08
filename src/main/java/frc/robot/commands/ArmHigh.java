@@ -12,7 +12,7 @@ import frc.robot.Constants.Swerve.Arm;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
-public class ArmHigh extends CommandBase {
+public class ArmHigh extends CommandBase  {
 
   private final ArmSubsystem m_armSubsystem;
   private final PIDController shoulderPIDController;

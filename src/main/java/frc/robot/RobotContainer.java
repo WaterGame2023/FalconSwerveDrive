@@ -42,13 +42,17 @@ public class RobotContainer {
   private final Swerve swerveSubsystem = new Swerve();
   private final ArmSubsystem armSubsystem = new ArmSubsystem();
 
+  private final ArmHigh armHigh = new ArmHigh(armSubsystem);
+  private final ArmLow armLow = new ArmLow(armSubsystem);
+  private final PutThoseGrippersAway armStow = new PutThoseGrippersAway(armSubsystem);
+
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     boolean fieldRelative = true; // Do you want field oriented control?
     boolean openLoop = true; // Do you want acceleration on the robot
     //swerveSubsystem.setDefaultCommand(new TeleopSwerve(swerveSubsystem, driver, translationAxis, strafeAxis, rotationAxis, fieldRelative, openLoop));  //Default command to drive the bot
-    armSubsystem.setDefaultCommand(new ArmManual(armSubsystem, arm, 0, 1, 2)); //Default Manual Arm Command
+    //armSubsystem.setDefaultCommand(new ArmManual(armSubsystem, arm, 0, 1, 2)); //Default Manual Arm Command
     // Configure the button bindings
     configureButtonBindings();
   }
@@ -61,11 +65,11 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     /* Driver Buttons */
-    zeroGyro.whenPressed(new InstantCommand(() -> swerveSubsystem.zeroGyro()));
+    zeroGyro.onTrue(new InstantCommand(() -> swerveSubsystem.zeroGyro()));
     /* Arm Buttons */
-    armUpAndOut.whenPressed(new ArmHigh(armSubsystem));
-    armDownAndOut.whenPressed(new ArmLow(armSubsystem));
-    armStore.whenPressed(new PutThoseGrippersAway(armSubsystem));
+    armUpAndOut.onTrue(armHigh);
+    armDownAndOut.onTrue(armLow);
+    armStore.onTrue(armStow);
   }
 
   /**

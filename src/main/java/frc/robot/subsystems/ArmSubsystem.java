@@ -10,6 +10,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
@@ -26,6 +27,7 @@ public class ArmSubsystem extends SubsystemBase {
 public void init() {
 shoulderFalcon.setNeutralMode(NeutralMode.Brake);
 elbowMotor.setIdleMode(IdleMode.kBrake);
+zeroAllEncoders();
 
 //Set open and closed loop ramp rates
 wristMotor.setIdleMode(IdleMode.kBrake);
@@ -72,6 +74,19 @@ public double getElbowDegrees() {
 
 public double getWristDegrees() {
   return wristMotor.getEncoder().getPosition() * 360 / 42; //TODO Compensate for gearbox ratio
+}
+
+public void zeroAllEncoders() {
+  shoulderFalcon.setSelectedSensorPosition(0);
+  elbowMotor.getEncoder().setPosition(0);
+  wristMotor.getEncoder().setPosition(0);
+}
+
+@Override
+public void periodic(){
+  SmartDashboard.putNumber("Shoulder Position: ", getShoulderAngle());
+  SmartDashboard.putNumber("Elbow Position: ", getElbowAngle());
+  SmartDashboard.putNumber("Wrist Position: ", getWristAngle());
 }
 
 }
