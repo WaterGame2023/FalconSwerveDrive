@@ -28,15 +28,15 @@ public class ArmHigh extends CommandBase  {
           addRequirements(m_armSubsystem);
 
           this.shoulderPIDController = new PIDController(Arm.shoulderKP, Arm.shoulderKI, Arm.shoulderKP);
-          shoulderPIDController.setTolerance(.1);
+          shoulderPIDController.setTolerance(2);
           shoulderPIDController.setSetpoint(Arm.shoulderHighPosition);
 
           this.elbowPIDController = new PIDController(Arm.elbowKP, Arm.elbowKI, Arm.elbowKP);
-          elbowPIDController.setTolerance(.1);
+          elbowPIDController.setTolerance(2);
           elbowPIDController.setSetpoint(Arm.elbowHighPosition);
 
           this.wristPIDController = new PIDController(Arm.wristKP, Arm.wristKI, Arm.wristKP);
-          wristPIDController.setTolerance(.1);
+          wristPIDController.setTolerance(1);
           wristPIDController.setSetpoint(Arm.wristHighPosition);
     }
     
@@ -54,7 +54,7 @@ public class ArmHigh extends CommandBase  {
     double elbowSpeed = elbowPIDController.calculate(m_armSubsystem.getElbowAngle());
     double wristSpeed = wristPIDController.calculate(m_armSubsystem.getWristAngle());
 
-    m_armSubsystem.setSpeeds(shoulderSpeed, elbowSpeed, wristSpeed);
+    m_armSubsystem.setSpeeds(0, 0, wristSpeed);
 
     System.out.println("Shoulder Angle: " + m_armSubsystem.getShoulderAngle());
     System.out.println("Elbow Angle: " + m_armSubsystem.getElbowAngle());

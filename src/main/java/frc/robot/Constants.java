@@ -119,17 +119,17 @@ public final class Constants {
             public static final double gripperOpenPosition = 0; //The open position of the gripper
             public static final double gripperClosedPosition = 0; //The closed position of the gripper
 
-            public static final double shoulderKP = .1; //P value for shoulder motor
+            public static final double shoulderKP = 0; //P value for shoulder motor
             public static final double shoulderKI = 0; //I value for shoulder motor
             public static final double shoulderKD = 0; //D value for shoulder motor
 
-            public static final double elbowKP = 0.1; //P value for elbow motor
+            public static final double elbowKP = 0.2; //P value for elbow motor
             public static final double elbowKI = 0; //I value for elbow motor
             public static final double elbowKD = 0; //D value for elbow motor
 
-            public static final double wristKP = .1; //P value for wrist motor
-            public static final double wristKI = 0; //I value for wrist motor
-            public static final double wristKD = 0; //D value for wrist motor
+            public static final double wristKP = 0.004; //P value for wrist motor
+            public static final double wristKI = 0.00000005; //I value for wrist motor
+            public static final double wristKD = 0.00004; //D value for wrist motor
 
             public static final double gripperKP = 0; //P value for gripper motor
             public static final double gripperKI = 0; //I value for gripper motor

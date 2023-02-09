@@ -23,6 +23,8 @@ public class ArmSubsystem extends SubsystemBase {
  private CANSparkMax elbowMotor = new CANSparkMax(22, MotorType.kBrushless);
  private CANSparkMax wristMotor = new CANSparkMax(23, MotorType.kBrushless);
 
+ private double WristSpeed = 0;
+
 //Set neuteral mode to brake for each motor
 public void init() {
 shoulderFalcon.setNeutralMode(NeutralMode.Brake);
@@ -40,6 +42,7 @@ wristMotor.setClosedLoopRampRate(25);
 }
 
   public void setSpeeds(double shoulderSpeed, double elbowSpeed, double wristSpeed) {
+    this.WristSpeed = wristSpeed;
     shoulderFalcon.set(ControlMode.PercentOutput, shoulderSpeed);    
     elbowMotor.set(elbowSpeed);
     wristMotor.set(wristSpeed);
@@ -87,6 +90,7 @@ public void periodic(){
   SmartDashboard.putNumber("Shoulder Position: ", getShoulderAngle());
   SmartDashboard.putNumber("Elbow Position: ", getElbowAngle());
   SmartDashboard.putNumber("Wrist Position: ", getWristAngle());
+  SmartDashboard.putNumber("Wrist Speed: ", WristSpeed);
 }
 
 }
