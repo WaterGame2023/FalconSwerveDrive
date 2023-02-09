@@ -29,6 +29,8 @@ import frc.robot.subsystems.*;
 public class Robot extends TimedRobot {
   public static CTREConfigs ctreConfigs;
 
+  private static ArmSubsystem armSubsystem;
+
   Thread m_visionThread;
 
   private Command m_autonomousCommand;
@@ -42,6 +44,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     ctreConfigs = new CTREConfigs();
+
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // sendable choosers on the dashboard once we have them.
     m_robotContainer = new RobotContainer();

@@ -36,6 +36,8 @@ public class RobotContainer {
   private final JoystickButton armUpAndOut = new JoystickButton(arm, 2); // A button on the controller to move the arm up and out
   private final JoystickButton armDownAndOut = new JoystickButton(arm, 3); // A button on the controller to move the arm up and out
   private final JoystickButton armStore = new JoystickButton(arm, 4); // A button on the controller to move the arm up and out
+  private final JoystickButton motorRelease = new JoystickButton(arm, 7);
+  private final JoystickButton zeroArmEncoders = new JoystickButton(arm, 8);
 
 
   // Define the Swerve subsystem as swerveSubsystem
@@ -55,6 +57,7 @@ public class RobotContainer {
     //armSubsystem.setDefaultCommand(new ArmManual(armSubsystem, arm, 0, 1, 2)); //Default Manual Arm Command
     // Configure the button bindings
     configureButtonBindings();
+    armSubsystem.init();
   }
 
   /**
@@ -67,9 +70,13 @@ public class RobotContainer {
     /* Driver Buttons */
     zeroGyro.onTrue(new InstantCommand(() -> swerveSubsystem.zeroGyro()));
     /* Arm Buttons */
-    armUpAndOut.onTrue(armHigh);
-    armDownAndOut.onTrue(armLow);
+    armUpAndOut.whileTrue(armHigh);
+    armDownAndOut.whileTrue(armLow);
     armStore.onTrue(armStow);
+
+    motorRelease.onTrue(new InstantCommand(() -> armSubsystem.releaseAllMotors()));
+    motorRelease.onFalse(new InstantCommand(() -> armSubsystem.brakeAllMotors()));
+    zeroArmEncoders.onTrue(new InstantCommand(() -> armSubsystem.zeroAllEncoders()));
   }
 
   /**

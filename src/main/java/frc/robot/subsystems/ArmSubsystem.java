@@ -26,19 +26,20 @@ public class ArmSubsystem extends SubsystemBase {
  private double WristSpeed = 0;
 
 //Set neuteral mode to brake for each motor
-public void init() {
-shoulderFalcon.setNeutralMode(NeutralMode.Brake);
-elbowMotor.setIdleMode(IdleMode.kBrake);
-zeroAllEncoders();
+public final void init() {
+  shoulderFalcon.setNeutralMode(NeutralMode.Brake);
+  elbowMotor.setIdleMode(IdleMode.kBrake);
+  zeroAllEncoders();
 
-//Set open and closed loop ramp rates
-wristMotor.setIdleMode(IdleMode.kBrake);
-shoulderFalcon.configOpenloopRamp(.25);
-shoulderFalcon.configClosedloopRamp(.25);
-elbowMotor.setOpenLoopRampRate(.25);
-elbowMotor.setClosedLoopRampRate(.25);
-wristMotor.setOpenLoopRampRate(.25);
-wristMotor.setClosedLoopRampRate(25);
+  //Set open and closed loop ramp rates
+  wristMotor.setIdleMode(IdleMode.kBrake);
+  shoulderFalcon.configOpenloopRamp(0);
+  shoulderFalcon.configClosedloopRamp(0);
+  elbowMotor.setOpenLoopRampRate(0);
+  elbowMotor.setClosedLoopRampRate(0);
+  wristMotor.setOpenLoopRampRate(0);
+  wristMotor.setClosedLoopRampRate(0);
+
 }
 
   public void setSpeeds(double shoulderSpeed, double elbowSpeed, double wristSpeed) {
@@ -83,7 +84,22 @@ public void zeroAllEncoders() {
   shoulderFalcon.setSelectedSensorPosition(0);
   elbowMotor.getEncoder().setPosition(0);
   wristMotor.getEncoder().setPosition(0);
+  System.out.println("Arm Encoders Zeroed");
 }
+
+public void releaseAllMotors() {
+shoulderFalcon.setNeutralMode(NeutralMode.Coast);
+elbowMotor.setIdleMode(IdleMode.kCoast);
+wristMotor.setIdleMode(IdleMode.kCoast);
+System.out.println("Motors Released!");
+}
+
+public void brakeAllMotors() {
+  shoulderFalcon.setNeutralMode(NeutralMode.Brake);
+  elbowMotor.setIdleMode(IdleMode.kBrake);
+  wristMotor.setIdleMode(IdleMode.kBrake);
+  System.out.println("Motors Braked!");
+  }
 
 @Override
 public void periodic(){
