@@ -108,7 +108,7 @@ public final class Constants {
             public static final double shoulderStorePosition = 0; //The high position of the elbow
             public static final double shoulderLowPosition = -7177; //The low position of the shoulder
 
-            public static final double elbowHighPosition = -59.096073150634766; //The high position of the elbow
+            public static final double elbowHighPosition = -55.096073150634766; //The high position of the elbow
             public static final double elbowStorePosition = 0; //The high position of the elbow
             public static final double elbowLowPosition = -37.14250183105469; //The low position of the elbow
 
@@ -123,14 +123,14 @@ public final class Constants {
             public static final double shoulderKI = 0; //I value for shoulder motor
             public static final double shoulderKD = 0; //D value for shoulder motor
 
-            public static final double elbowKP = 0.2; //P value for elbow motor
-            public static final double elbowKI = 0; //I value for elbow motor
-            public static final double elbowKD = 0; //D value for elbow motor
+            public static final double elbowKP = 0.007; //P value for elbow motor
+            public static final double elbowKI = 0.00013; //I value for elbow motor
+            public static final double elbowKD = 0.0001; //D value for elbow motor
 
             //If you change the speed in the command, change the values inversly and proportionally
-            public static final double wristKP = 0.00045; //P value for wrist motor
-            public static final double wristKI = 0.00000000; //I value for wrist motor
-            public static final double wristKD = 0.00000; //D value for wrist motor
+            public static final double wristKP = 0.005; //P value for wrist motor
+            public static final double wristKI = 0.00013; //I value for wrist motor
+            public static final double wristKD = 0.0001; //D value for wrist motor
 
             public static final double gripperKP = 0; //P value for gripper motor
             public static final double gripperKI = 0; //I value for gripper motor
