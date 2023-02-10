@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
+import com.revrobotics.CANSparkMaxLowLevel.PeriodicFrame;
 import com.revrobotics.CANSparkMax.IdleMode;
 
 /** Add your docs here. */
@@ -39,6 +40,10 @@ public final void init() {
   elbowMotor.setClosedLoopRampRate(0);
   wristMotor.setOpenLoopRampRate(0);
   wristMotor.setClosedLoopRampRate(0);
+
+  //Set the encoder values to read every 30 ms
+  elbowMotor.setPeriodicFramePeriod(PeriodicFrame.kStatus2, 40);
+  wristMotor.setPeriodicFramePeriod(PeriodicFrame.kStatus2, 40);
 
 }
 

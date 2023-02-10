@@ -128,9 +128,9 @@ public final class Constants {
             public static final double elbowKD = 0.0001; //D value for elbow motor
 
             //If you change the speed in the command, change the values inversly and proportionally
-            public static final double wristKP = 0.005; //P value for wrist motor
-            public static final double wristKI = 0.00013; //I value for wrist motor
-            public static final double wristKD = 0.0001; //D value for wrist motor
+            public static final double wristKP = 0.0058; //P value for wrist motor
+            public static final double wristKI = 0.0000; //I value for wrist motor
+            public static final double wristKD = 0.00000; //D value for wrist motor
 
             public static final double gripperKP = 0; //P value for gripper motor
             public static final double gripperKI = 0; //I value for gripper motor

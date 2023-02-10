@@ -36,7 +36,7 @@ public class ArmHigh extends CommandBase  {
           elbowPIDController.setSetpoint(Arm.elbowHighPosition);
 
           this.wristPIDController = new PIDController(Arm.wristKP, Arm.wristKI, Arm.wristKP);
-          wristPIDController.setTolerance(1);
+          wristPIDController.setTolerance(.5);
           wristPIDController.setSetpoint(Arm.wristHighPosition);
     }
     
