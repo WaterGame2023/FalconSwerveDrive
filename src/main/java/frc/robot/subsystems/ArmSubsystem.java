@@ -70,15 +70,15 @@ public void stopMotor() {
 }
 
 public double getShoulderAngle() {
-  return shoulderFalcon.getSelectedSensorPosition();
+  return shoulderFalcon.getSelectedSensorPosition() / 125;
 }
 
 public double getElbowAngle() {
-  return elbowMotor.getEncoder().getPosition();
+  return elbowMotor.getEncoder().getPosition() / 125;
 }
 
 public double getWristAngle() {
-  return wristMotor.getEncoder().getPosition();
+  return wristMotor.getEncoder().getPosition() / 125;
 }
 
 public double getClawPosition() {
