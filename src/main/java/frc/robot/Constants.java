@@ -97,12 +97,12 @@ public final class Constants {
             public static final int shoulderMotorID = 21; //CAN ID for the shoulder motor
             public static final int elbowMotorID = 22; //CAN ID for the elbow motor
             public static final int wristMotorID = 23; //CAN ID for the wrist motor
-            public static final int gripperMotorID = 24; //CAN ID for the claw motor
+            public static final int clawMotorID = 24; //CAN ID for the claw motor
 
             public static final int shoulderEncoderID = 31; //CAN ID for the shoulder encoder assuming we use CAN based
             public static final int elbowEncoderID = 32; //CAN ID for the elbow encoder assuming we use CAN based
             public static final int wristEncoderID = 33; //CAN ID for the wrist encoder assuming we use CAN based
-            public static final int gripperEncoderID = 34; //CAN ID for the gripper encoder assuming we use CAN based
+            public static final int clawEncoderID = 34; //CAN ID for the claw encoder assuming we use CAN based
 
             public static final double shoulderHighPosition = -48265; //The high position of the shoulder
             public static final double shoulderStorePosition = 0; //The high position of the elbow
@@ -116,8 +116,8 @@ public final class Constants {
             public static final double wristStorePosition = 0; //The high position of the elbow
             public static final double wristLowPosition = -60.92958450317383; //The low position of the wrist
 
-            public static final double gripperOpenPosition = 0; //The open position of the gripper
-            public static final double gripperClosedPosition = 0; //The closed position of the gripper
+            public static final double clawOpenPosition = 0; //The open position of the claw
+            public static final double clawClosedPosition = 0; //The closed position of the claw
 
             public static final double shoulderKP = 0; //P value for shoulder motor
             public static final double shoulderKI = 0; //I value for shoulder motor
@@ -132,9 +132,9 @@ public final class Constants {
             public static final double wristKI = 0.0000; //I value for wrist motor
             public static final double wristKD = 0.00000; //D value for wrist motor
 
-            public static final double gripperKP = 0; //P value for gripper motor
-            public static final double gripperKI = 0; //I value for gripper motor
-            public static final double gripperKD = 0; //D value for gripper motor
+            public static final double clawKP = 0; //P value for claw motor
+            public static final double clawKI = 0; //I value for claw motor
+            public static final double clawKD = 0; //D value for claw motor
         }
 
         // Config for Module 1, Front Right
