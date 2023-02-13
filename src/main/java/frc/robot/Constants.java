@@ -119,22 +119,22 @@ public final class Constants {
             public static final double clawOpenPosition = 0; //The open position of the claw
             public static final double clawClosedPosition = 0; //The closed position of the claw
 
-            public static final double shoulderKP = 0; //P value for shoulder motor
-            public static final double shoulderKI = 0; //I value for shoulder motor
-            public static final double shoulderKD = 0; //D value for shoulder motor
+            public static final double shoulderKP = 0; //P value for shoulder motor FIXME BY TUNING
+            public static final double shoulderKI = 0; //I value for shoulder motor FIXME BY TUNING
+            public static final double shoulderKD = 0; //D value for shoulder motor FIXME BY TUNING
 
-            public static final double elbowKP = 0.007; //P value for elbow motor
-            public static final double elbowKI = 0.00013; //I value for elbow motor
-            public static final double elbowKD = 0.0001; //D value for elbow motor
+            public static final double elbowKP = 0.007; //P value for elbow motor FIXME BY TUNING
+            public static final double elbowKI = 0.00013; //I value for elbow motor FIXME BY TUNING
+            public static final double elbowKD = 0.0001; //D value for elbow motor FIXME BY TUNING
 
             //If you change the speed in the command, change the values inversly and proportionally
-            public static final double wristKP = 0.0058; //P value for wrist motor
-            public static final double wristKI = 0.0000; //I value for wrist motor
-            public static final double wristKD = 0.00000; //D value for wrist motor
+            public static final double wristKP = 0.0058; //P value for wrist motor FIXME BY TUNING
+            public static final double wristKI = 0.0000; //I value for wrist motor FIXME BY TUNING
+            public static final double wristKD = 0.00000; //D value for wrist motor FIXME BY TUNING
 
-            public static final double clawKP = 0; //P value for claw motor
-            public static final double clawKI = 0; //I value for claw motor
-            public static final double clawKD = 0; //D value for claw motor
+            public static final double clawKP = 0; //P value for claw motor FIXME BY TUNING
+            public static final double clawKI = 0; //I value for claw motor FIXME BY TUNING
+            public static final double clawKD = 0; //D value for claw motor FIXME BY TUNING
         }
 
         // Config for Module 1, Front Right
