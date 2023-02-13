@@ -11,6 +11,8 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import frc.robot.Constants;
+import frc.robot.Constants.Swerve.Arm;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
@@ -20,10 +22,10 @@ import com.revrobotics.CANSparkMax.IdleMode;
 /** Add your docs here. */
 public class ArmSubsystem extends SubsystemBase {
 
- private TalonFX shoulderFalcon = new TalonFX(21);
- private CANSparkMax elbowMotor = new CANSparkMax(22, MotorType.kBrushless);
- private CANSparkMax wristMotor = new CANSparkMax(23, MotorType.kBrushless);
- private TalonFX clawFalcon = new TalonFX(24);
+ private TalonFX shoulderFalcon = new TalonFX(Arm.shoulderMotorID);
+ private CANSparkMax elbowMotor = new CANSparkMax(Arm.elbowMotorID, MotorType.kBrushless);
+ private CANSparkMax wristMotor = new CANSparkMax(Arm.wristMotorID, MotorType.kBrushless);
+ private TalonFX clawFalcon = new TalonFX(Arm.clawMotorID);
 
  private double WristSpeed = 0;
 
