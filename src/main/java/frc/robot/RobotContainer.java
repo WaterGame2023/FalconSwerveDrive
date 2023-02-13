@@ -13,6 +13,9 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 import frc.robot.autos.*;
 import frc.robot.commands.*;
+import frc.robot.commands.Arm.ArmHigh;
+import frc.robot.commands.Arm.ArmLow;
+import frc.robot.commands.Arm.PutThoseGrippersAway;
 import frc.robot.subsystems.*;
 
 /**
