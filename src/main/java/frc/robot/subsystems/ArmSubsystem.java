@@ -69,6 +69,9 @@ public void stopMotor() {
   shoulderFalcon.set(ControlMode.PercentOutput, 0);
   elbowMotor.set(0);
   wristMotor.set(0);
+}
+
+public void stopGripper() {
   gripperFalcon.set(ControlMode.PercentOutput, 0);
 }
 
