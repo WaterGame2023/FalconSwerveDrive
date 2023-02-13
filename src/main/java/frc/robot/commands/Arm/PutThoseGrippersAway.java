@@ -7,7 +7,6 @@ package frc.robot.commands.Arm;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.math.controller.PIDController;
 import frc.robot.subsystems.*;
-import frc.robot.Constants;
 import frc.robot.Constants.Swerve.Arm;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -18,9 +17,6 @@ public class PutThoseGrippersAway extends CommandBase {
   private final PIDController shoulderPIDController;
   private final PIDController elbowPIDController;
   private final PIDController wristPIDController;
-/*   private final double shoulderStoreAngle;
-  private final double elbowStoreAngle;
-  private final double wristStoreAngle; */
 
     /** Creates a new PutThoseGrippersAway. */
     public PutThoseGrippersAway(ArmSubsystem m_armSubsystem) {

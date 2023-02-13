@@ -5,10 +5,7 @@
 package frc.robot.commands.Claw;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.Constants;
 import frc.robot.Constants.Swerve.Arm;
-import edu.wpi.first.math.controller.PIDController;
-import frc.robot.subsystems.*;
 import edu.wpi.first.math.controller.PIDController;
 import frc.robot.subsystems.*;
 
