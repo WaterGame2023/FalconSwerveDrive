@@ -54,7 +54,7 @@ public class PutThoseGrippersAway extends CommandBase {
     double elbowSpeed = elbowPIDController.calculate(m_armSubsystem.getElbowAngle());
     double wristSpeed = wristPIDController.calculate(m_armSubsystem.getWristAngle());
 
-    m_armSubsystem.setSpeeds(shoulderSpeed, elbowSpeed, wristSpeed, 0);
+    m_armSubsystem.setSpeeds(shoulderSpeed, elbowSpeed, wristSpeed);
 
     System.out.println("Shoulder Angle: " + m_armSubsystem.getShoulderAngle());
     System.out.println("Elbow Angle: " + m_armSubsystem.getElbowAngle());

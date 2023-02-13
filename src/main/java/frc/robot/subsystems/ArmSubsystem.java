@@ -53,13 +53,16 @@ public final void init() {
 
 }
 
-  public void setSpeeds(double shoulderSpeed, double elbowSpeed, double wristSpeed,double gripperSpeed) {
+  public void setSpeeds(double shoulderSpeed, double elbowSpeed, double wristSpeed) {
     this.WristSpeed = wristSpeed;
     shoulderFalcon.set(ControlMode.PercentOutput, shoulderSpeed);    
     elbowMotor.set(elbowSpeed);
     wristMotor.set(wristSpeed);
-    gripperFalcon.set(ControlMode.PercentOutput, gripperSpeed);
 
+  }
+
+  public void setGripperSpeed(double gripperSpeed) {
+    gripperFalcon.set(ControlMode.PercentOutput, gripperSpeed);
   }
 
 public void stopMotor() {

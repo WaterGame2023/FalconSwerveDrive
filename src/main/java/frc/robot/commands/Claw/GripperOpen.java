@@ -5,11 +5,20 @@
 package frc.robot.commands.Claw;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
+import edu.wpi.first.math.controller.PIDController;
+import frc.robot.subsystems.*;
+import edu.wpi.first.math.controller.PIDController;
+import frc.robot.subsystems.*;
 
 public class GripperOpen extends CommandBase {
-  /** Creates a new GripperOpen. */
-  public GripperOpen() {
+  private final ArmSubsystem m_armSubsystem;
+  
+  public GripperOpen(ArmSubsystem m_armSubsystem) {
     // Use addRequirements() here to declare subsystem dependencies.
+      this.m_armSubsystem = m_armSubsystem;
+      addRequirements(m_armSubsystem);
+
   }
 
   // Called when the command is initially scheduled.
