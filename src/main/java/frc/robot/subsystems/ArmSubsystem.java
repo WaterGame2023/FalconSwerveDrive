@@ -23,6 +23,7 @@ public class ArmSubsystem extends SubsystemBase {
  private TalonFX shoulderFalcon = new TalonFX(21);
  private CANSparkMax elbowMotor = new CANSparkMax(22, MotorType.kBrushless);
  private CANSparkMax wristMotor = new CANSparkMax(23, MotorType.kBrushless);
+ private TalonFX clawFalcon = new TalonFX(24);
 
  private double WristSpeed = 0;
 
@@ -30,16 +31,19 @@ public class ArmSubsystem extends SubsystemBase {
 public final void init() {
   shoulderFalcon.setNeutralMode(NeutralMode.Brake);
   elbowMotor.setIdleMode(IdleMode.kBrake);
+  wristMotor.setIdleMode(IdleMode.kBrake);
+  clawFalcon.setNeutralMode(NeutralMode.Brake);
   zeroAllEncoders();
 
   //Set open and closed loop ramp rates
-  wristMotor.setIdleMode(IdleMode.kBrake);
   shoulderFalcon.configOpenloopRamp(0);
   shoulderFalcon.configClosedloopRamp(0);
   elbowMotor.setOpenLoopRampRate(0);
   elbowMotor.setClosedLoopRampRate(0);
   wristMotor.setOpenLoopRampRate(0);
   wristMotor.setClosedLoopRampRate(0);
+  clawFalcon.configOpenloopRamp(0);
+  clawFalcon.configClosedloopRamp(0);
 
   //Set the encoder values to read every 30 ms
   elbowMotor.setPeriodicFramePeriod(PeriodicFrame.kStatus2, 40);
@@ -47,11 +51,12 @@ public final void init() {
 
 }
 
-  public void setSpeeds(double shoulderSpeed, double elbowSpeed, double wristSpeed) {
+  public void setSpeeds(double shoulderSpeed, double elbowSpeed, double wristSpeed,double clawSpeed) {
     this.WristSpeed = wristSpeed;
     shoulderFalcon.set(ControlMode.PercentOutput, shoulderSpeed);    
     elbowMotor.set(elbowSpeed);
     wristMotor.set(wristSpeed);
+    clawFalcon.set(ControlMode.PercentOutput, clawSpeed);
 
   }
 
@@ -59,6 +64,7 @@ public void stopMotor() {
   shoulderFalcon.set(ControlMode.PercentOutput, 0);
   elbowMotor.set(0);
   wristMotor.set(0);
+  clawFalcon.set(ControlMode.PercentOutput, 0);
 }
 
 public double getShoulderAngle() {
@@ -71,6 +77,10 @@ public double getElbowAngle() {
 
 public double getWristAngle() {
   return wristMotor.getEncoder().getPosition();
+}
+
+public double getClawPosition() {
+  return clawFalcon.getSelectedSensorPosition();
 }
 
 public double getShoulderDegrees() {
@@ -89,6 +99,7 @@ public void zeroAllEncoders() {
   shoulderFalcon.setSelectedSensorPosition(0);
   elbowMotor.getEncoder().setPosition(0);
   wristMotor.getEncoder().setPosition(0);
+  clawFalcon.getSelectedSensorPosition(0);
   System.out.println("Arm Encoders Zeroed");
 }
 
@@ -96,6 +107,7 @@ public void releaseAllMotors() {
 shoulderFalcon.setNeutralMode(NeutralMode.Coast);
 elbowMotor.setIdleMode(IdleMode.kCoast);
 wristMotor.setIdleMode(IdleMode.kCoast);
+clawFalcon.setNeutralMode(NeutralMode.Coast);
 System.out.println("Motors Released!");
 }
 
@@ -103,6 +115,7 @@ public void brakeAllMotors() {
   shoulderFalcon.setNeutralMode(NeutralMode.Brake);
   elbowMotor.setIdleMode(IdleMode.kBrake);
   wristMotor.setIdleMode(IdleMode.kBrake);
+  clawFalcon.setNeutralMode(NeutralMode.Brake);
   System.out.println("Motors Braked!");
   }
 
@@ -111,6 +124,7 @@ public void periodic(){
   SmartDashboard.putNumber("Shoulder Position: ", getShoulderAngle());
   SmartDashboard.putNumber("Elbow Position: ", getElbowAngle());
   SmartDashboard.putNumber("Wrist Position: ", getWristAngle());
+  SmartDashboard.putNumber("Claw Position: ", getClawPosition());
   SmartDashboard.putNumber("Wrist Speed: ", WristSpeed);
 }
 
