@@ -46,7 +46,7 @@ public class ArmManual extends CommandBase {
     eAxis = (Math.abs(eAxis) < Constants.stickDeadband) ? 0 : eAxis;
     wAxis = (Math.abs(wAxis) < Constants.stickDeadband) ? 0 : wAxis;
 
-    armSubsystem.setSpeeds(sAxis, eAxis, wAxis);
+    armSubsystem.setSpeeds(sAxis, eAxis, wAxis, 0);
   }
 
   // Called once the command ends or is interrupted.
