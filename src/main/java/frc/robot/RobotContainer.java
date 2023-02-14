@@ -13,9 +13,8 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 import frc.robot.autos.*;
 import frc.robot.commands.*;
-import frc.robot.commands.Arm.ArmHigh;
-import frc.robot.commands.Arm.ArmLow;
-import frc.robot.commands.Arm.PutThoseGrippersAway;
+import frc.robot.commands.Arm.*;
+import frc.robot.commands.Claw.*;
 import frc.robot.subsystems.*;
 
 /**
@@ -41,6 +40,8 @@ public class RobotContainer {
   private final JoystickButton armStore = new JoystickButton(arm, 4); // A button on the controller to move the arm up and out
   private final JoystickButton motorRelease = new JoystickButton(arm, 7);
   private final JoystickButton zeroArmEncoders = new JoystickButton(arm, 8);
+  private final JoystickButton gripperOpen = new JoystickButton(arm, 5);
+  private final JoystickButton gripperClose = new JoystickButton(arm, 6);
 
 
   // Define the Swerve subsystem as swerveSubsystem
@@ -50,6 +51,8 @@ public class RobotContainer {
   private final ArmHigh armHigh = new ArmHigh(armSubsystem);
   private final ArmLow armLow = new ArmLow(armSubsystem);
   private final PutThoseGrippersAway armStow = new PutThoseGrippersAway(armSubsystem);
+  private final GripperOpen greasyGripper9000Open = new GripperOpen(armSubsystem);
+  private final GripperClose greasyGripper9000Close = new GripperClose(armSubsystem);
 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
@@ -75,6 +78,8 @@ public class RobotContainer {
     armUpAndOut.onTrue(armHigh);
     armDownAndOut.whileTrue(armLow);
     armStore.onTrue(armStow);
+    gripperOpen.onTrue(greasyGripper9000Open);
+    gripperClose.onTrue(greasyGripper9000Close);
 
     motorRelease.onTrue(new InstantCommand(() -> armSubsystem.releaseAllMotors()));
     motorRelease.onFalse(new InstantCommand(() -> armSubsystem.brakeAllMotors()));
