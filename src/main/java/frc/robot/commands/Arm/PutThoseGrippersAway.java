@@ -23,15 +23,15 @@ public class PutThoseGrippersAway extends CommandBase {
           this.m_armSubsystem = m_armSubsystem;
           addRequirements(m_armSubsystem);
 
-          this.shoulderPIDController = new PIDController(Arm.shoulderKP, Arm.shoulderKI, Arm.shoulderKP);
+          this.shoulderPIDController = new PIDController(Arm.shoulderKP, Arm.shoulderKI, Arm.shoulderKD);
           shoulderPIDController.setTolerance(.1);
           shoulderPIDController.setSetpoint(Arm.shoulderStorePosition);
 
-          this.elbowPIDController = new PIDController(Arm.elbowKP, Arm.elbowKI, Arm.elbowKP);
+          this.elbowPIDController = new PIDController(Arm.elbowKP, Arm.elbowKI, Arm.elbowKD);
           elbowPIDController.setTolerance(.1);
           elbowPIDController.setSetpoint(Arm.elbowStorePosition);
 
-          this.wristPIDController = new PIDController(Arm.wristKP, Arm.wristKI, Arm.wristKP);
+          this.wristPIDController = new PIDController(Arm.wristKP, Arm.wristKI, Arm.wristKD);
           wristPIDController.setTolerance(.1);
           wristPIDController.setSetpoint(Arm.wristStorePosition);
     }
