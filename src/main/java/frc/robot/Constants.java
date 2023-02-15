@@ -4,6 +4,7 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
+import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.trajectory.TrapezoidProfile;
 import edu.wpi.first.math.util.Units;
 import frc.lib.util.SwerveModuleConstants;
@@ -16,8 +17,8 @@ public final class Constants {
         public static final boolean invertGyro = true; // Is the GYRO Upside Down?
 
         // Drive train configuration constants
-        public static final double trackWidth = Units.inchesToMeters(22.1875);
-        public static final double wheelBase = Units.inchesToMeters(26.0);
+        public static final double trackWidth = Units.inchesToMeters(21.00);
+        public static final double wheelBase = Units.inchesToMeters(21.0);
         public static final double wheelDiameter = Units.inchesToMeters(4.0);
         public static final double wheelCircumference = wheelDiameter * Math.PI;
 
