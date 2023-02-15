@@ -93,7 +93,7 @@ public final class Constants {
                 new SwerveModuleConstants(driveMotorID, angleMotorID, canCoderID, angleOffset); //Sets the constant values for the module
         }
 
-        // TO DO: Get propper values for medium positions on all arm motors
+        // TO DO: Get propper values for Midium positions on all arm motors
         // Arm Motor variables
         public static final class Arm {
 
@@ -111,19 +111,19 @@ public final class Constants {
 
             // Shoulder positions
             public static final double shoulderHighPosition = -48265; //The high position of the shoulder
-            public static final double shoulderMedPosition = 0; //The medium position of the shoulder
+            public static final double shoulderMidPosition = 0; //The Midium position of the shoulder
             public static final double shoulderLowPosition = -7177; //The low position of the shoulder
             public static final double shoulderStorePosition = 0; //The Stored position of the shoulder
             
             // Elbow positions
             public static final double elbowHighPosition = -55.096073150634766; //The high position of the elbow
-            public static final double elbowMedPosition = 0; //The Medium position of the elbow
+            public static final double elbowMidPosition = 0; //The Midium position of the elbow
             public static final double elbowLowPosition = -37.14250183105469; //The low position of the elbow
             public static final double elbowStorePosition = 0; //The Stored position of the elbow
 
             // Wrist positions
             public static final double wristHighPosition = -61.929683685302734; //The high position of the wrist
-            public static final double wristMedPosition = 0; //The medium position of the wrist. 
+            public static final double wristMidPosition = 0; //The Midium position of the wrist. 
             public static final double wristLowPosition = -60.92958450317383; //The low position of the wrist
             public static final double wristStorePosition = 0; //The Stored position of the elbow
 
