@@ -11,15 +11,15 @@ import frc.robot.Constants.Swerve.Arm;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
-public class ArmHigh extends CommandBase  {
+public class ArmMed extends CommandBase  {
 
   private final ArmSubsystem m_armSubsystem;
   private final PIDController shoulderPIDController;
   private final PIDController elbowPIDController;
   private final PIDController wristPIDController;
 
-    /** Creates a new ArmHigh. */
-    public ArmHigh(ArmSubsystem m_armSubsystem) {
+    /** Creates a new ArmMed. */
+    public ArmMed(ArmSubsystem m_armSubsystem) {
           this.m_armSubsystem = m_armSubsystem;
           addRequirements(m_armSubsystem);
 
@@ -50,7 +50,7 @@ public class ArmHigh extends CommandBase  {
     double elbowSpeed = elbowPIDController.calculate(m_armSubsystem.getElbowAngle());
     double wristSpeed = 1.5*wristPIDController.calculate(m_armSubsystem.getWristAngle());
 
-    m_armSubsystem.setSpeeds(0, elbowSpeed, wristSpeed);
+    m_armSubsystem.setSpeeds(shoulderSpeed, elbowSpeed, wristSpeed);
 
     System.out.println("Shoulder Angle: " + m_armSubsystem.getShoulderAngle());
     System.out.println("Elbow Angle: " + m_armSubsystem.getElbowAngle());
