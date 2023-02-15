@@ -40,7 +40,7 @@ public class ArmHigh extends CommandBase  {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    System.out.println("ArmHigh command started. Everone stand back, I know what I'm doing. Trust me."); //Prints to the console
+    System.out.println("ArmHigh command started. Everyone stand back, I know what I'm doing. Trust me."); //Prints to the console
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -50,7 +50,7 @@ public class ArmHigh extends CommandBase  {
     double elbowSpeed = elbowPIDController.calculate(m_armSubsystem.getElbowAngle()); //Calculates the error for the elbow
     double wristSpeed = 1.5*wristPIDController.calculate(m_armSubsystem.getWristAngle()); //Calculates the error for the wrist
 
-    m_armSubsystem.setSpeeds(0, elbowSpeed, wristSpeed); //Sets the speeds for the elbow and wrist motors
+    m_armSubsystem.setSpeeds(0, elbowSpeed, wristSpeed); //Sets the speeds for the elbow and wrist motors Shoulder speed set to 0 for testing purposes
 
     System.out.println("Shoulder Angle: " + m_armSubsystem.getShoulderAngle()); //Prints the shoulder angle to the console
     System.out.println("Elbow Angle: " + m_armSubsystem.getElbowAngle()); //Prints the elbow angle to the console

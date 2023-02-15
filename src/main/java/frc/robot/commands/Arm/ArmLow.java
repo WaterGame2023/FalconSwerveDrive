@@ -25,48 +25,48 @@ public class ArmLow extends CommandBase {
           this.m_armSubsystem = m_armSubsystem;
           addRequirements(m_armSubsystem);
 
-          this.shoulderPIDController = new PIDController(Arm.shoulderKP, Arm.shoulderKI, Arm.shoulderKD);
-          shoulderPIDController.setTolerance(.1);
-          shoulderPIDController.setSetpoint(Arm.shoulderLowPosition);
+          this.shoulderPIDController = new PIDController(Arm.shoulderKP, Arm.shoulderKI, Arm.shoulderKD); //Input the PID values for the shoulder
+          shoulderPIDController.setTolerance(.1); //Sets the tolerance for the sholder PID controller
+          shoulderPIDController.setSetpoint(Arm.shoulderLowPosition); //Sets the setpoint for the shoulder PID controller
 
-          this.elbowPIDController = new PIDController(Arm.elbowKP, Arm.elbowKI, Arm.elbowKD);
-          elbowPIDController.setTolerance(.1);
-          elbowPIDController.setSetpoint(Arm.elbowLowPosition);
+          this.elbowPIDController = new PIDController(Arm.elbowKP, Arm.elbowKI, Arm.elbowKD); //Input the PID values for the elbow
+          elbowPIDController.setTolerance(.1); //Sets the tolerance for the elbow PID controller
+          elbowPIDController.setSetpoint(Arm.elbowLowPosition); //Sets the setpoint for the elbow PID controller
 
-          this.wristPIDController = new PIDController(Arm.wristKP, Arm.wristKI, Arm.wristKD);
-          wristPIDController.setTolerance(.1);
-          wristPIDController.setSetpoint(Arm.wristLowPosition);
+          this.wristPIDController = new PIDController(Arm.wristKP, Arm.wristKI, Arm.wristKD); //Input the PID values for the wrist
+          wristPIDController.setTolerance(.1); //Sets the tolerance for the wrist PID controller
+          wristPIDController.setSetpoint(Arm.wristLowPosition); //Sets the setpoint for the wrist PID controller
     }
     
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    System.out.println("ArmLow command started. Everone stand back, I know what I'm doing. Trust me.");
+    System.out.println("ArmLow command started. Everyone stand back, I know what I'm doing. Trust me."); //Prints to the console
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double shoulderSpeed = shoulderPIDController.calculate(m_armSubsystem.getShoulderAngle());
-    double elbowSpeed = elbowPIDController.calculate(m_armSubsystem.getElbowAngle());
-    double wristSpeed = wristPIDController.calculate(m_armSubsystem.getWristAngle());
+    double shoulderSpeed = shoulderPIDController.calculate(m_armSubsystem.getShoulderAngle()); //Calculates the speed for the shoulder
+    double elbowSpeed = elbowPIDController.calculate(m_armSubsystem.getElbowAngle()); //Calculates the speed for the elbow
+    double wristSpeed = wristPIDController.calculate(m_armSubsystem.getWristAngle());   
 
-    m_armSubsystem.setSpeeds(shoulderSpeed, elbowSpeed, wristSpeed);
+    m_armSubsystem.setSpeeds(shoulderSpeed, elbowSpeed, wristSpeed); //Sets the speeds for the arm motors
 
-    System.out.println("Shoulder Angle: " + m_armSubsystem.getShoulderAngle());
-    System.out.println("Elbow Angle: " + m_armSubsystem.getElbowAngle());
-    System.out.println("Wrist Angle: " + m_armSubsystem.getWristAngle());
+    System.out.println("Shoulder Angle: " + m_armSubsystem.getShoulderAngle()); //Prints the angles of the arm to the console
+    System.out.println("Elbow Angle: " + m_armSubsystem.getElbowAngle()); //Prints the angles of the arm to the console
+    System.out.println("Wrist Angle: " + m_armSubsystem.getWristAngle()); //Prints the angles of the arm to the console
 
-    SmartDashboard.putNumber("Shoulder Angle: ", m_armSubsystem.getShoulderAngle());
-    SmartDashboard.putNumber("Elbow Angle: ", m_armSubsystem.getElbowAngle());
-    SmartDashboard.putNumber("Wrist Angle: ", m_armSubsystem.getWristAngle());
+    SmartDashboard.putNumber("Shoulder Angle: ", m_armSubsystem.getShoulderAngle()); //Prints the angles of the arm to the SmartDashboard
+    SmartDashboard.putNumber("Elbow Angle: ", m_armSubsystem.getElbowAngle()); //Prints the angles of the arm to the SmartDashboard
+    SmartDashboard.putNumber("Wrist Angle: ", m_armSubsystem.getWristAngle()); //Prints the angles of the arm to the SmartDashboard
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_armSubsystem.stopMotor();
+    m_armSubsystem.stopMotor(); //Stops the arm motors
     System.out.println("Arm Motors Stopped!!!!!");
   }
 
