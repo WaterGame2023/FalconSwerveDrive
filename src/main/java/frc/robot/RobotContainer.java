@@ -38,10 +38,11 @@ public class RobotContainer {
   private final JoystickButton armUpAndOut = new JoystickButton(arm, 2); // A button on the controller to move the arm up and out
   private final JoystickButton armDownAndOut = new JoystickButton(arm, 3); // A button on the controller to move the arm up and out
   private final JoystickButton armStore = new JoystickButton(arm, 4); // A button on the controller to move the arm up and out
-  private final JoystickButton motorRelease = new JoystickButton(arm, 7);
-  private final JoystickButton zeroArmEncoders = new JoystickButton(arm, 8);
-  private final JoystickButton gripperOpen = new JoystickButton(arm, 5);
-  private final JoystickButton gripperClose = new JoystickButton(arm, 6);
+  private final JoystickButton armMiddle = new JoystickButton(arm, 5); // A button on the controller to move the arm up and out
+  private final JoystickButton motorRelease = new JoystickButton(arm, 8);
+  private final JoystickButton zeroArmEncoders = new JoystickButton(arm, 9);
+  private final JoystickButton gripperOpen = new JoystickButton(arm, 6);
+  private final JoystickButton gripperClose = new JoystickButton(arm, 7);
 
 
   // Define the Swerve subsystem as swerveSubsystem
@@ -51,6 +52,8 @@ public class RobotContainer {
   private final ArmHigh armHigh = new ArmHigh(armSubsystem);
   private final ArmLow armLow = new ArmLow(armSubsystem);
   private final PutThoseGrippersAway armStow = new PutThoseGrippersAway(armSubsystem);
+  private final ArmMid armMid = new ArmMid(armSubsystem);
+
   private final GripperOpen greasyGripper9000Open = new GripperOpen(armSubsystem);
   private final GripperClose greasyGripper9000Close = new GripperClose(armSubsystem);
 
@@ -74,15 +77,21 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    /* Driver Buttons */
+
+    //Drive Buttons
     //zeroGyro.onTrue(new InstantCommand(() -> swerveSubsystem.zeroGyro()));
-    /* Arm Buttons */
+    
+    //Arm Buttons
     armUpAndOut.onTrue(armHigh);
     armDownAndOut.whileTrue(armLow);
     armStore.onTrue(armStow);
+    armMiddle.onTrue(armMid);
+
+    //Gripper Buttons
     gripperOpen.onTrue(greasyGripper9000Open);
     gripperClose.onTrue(greasyGripper9000Close);
 
+    //Debug Buttons
     motorRelease.onTrue(new InstantCommand(() -> armSubsystem.releaseAllMotors()));
     motorRelease.onFalse(new InstantCommand(() -> armSubsystem.brakeAllMotors()));
     zeroArmEncoders.onTrue(new InstantCommand(() -> armSubsystem.zeroAllEncoders()));
@@ -96,6 +105,6 @@ public class RobotContainer {
   public Command getAutonomousCommand() {
     // the testAuto routine will run in auton
     //return new testingAuto(swerveSubsystem);
-    return null;
+    return null; //Return null if you don't want to run an auto for testing the arm
   }
 }
