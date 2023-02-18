@@ -61,7 +61,7 @@ public class RobotContainer {
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     boolean fieldRelative = true; // Do you want field oriented control?
-    boolean openLoop = true; // Do you want acceleration on the robot
+    boolean openLoop = true; 
     swerveSubsystem.setDefaultCommand(new TeleopSwerve(swerveSubsystem, driver, translationAxis, strafeAxis, rotationAxis, fieldRelative, openLoop));  //Default command to drive the bot
     // Configure the button bindings
     configureButtonBindings();
@@ -89,11 +89,11 @@ public class RobotContainer {
 
     //Gripper Buttons
     gripperOpen.onTrue(greasyGripper9000Open);
-    gripperClose.onTrue(greasyGripper9000Close);
+    gripperClose.whileTrue(greasyGripper9000Close);
 
     //Debug Buttons
-    motorRelease.onTrue(new InstantCommand(() -> armSubsystem.releaseAllMotors()));
-    motorRelease.onFalse(new InstantCommand(() -> armSubsystem.brakeAllMotors()));
+    /* motorRelease.onTrue(new InstantCommand(() -> armSubsystem.releaseAllMotors()));
+    motorRelease.onFalse(new InstantCommand(() -> armSubsystem.brakeAllMotors())); */
     zeroArmEncoders.onTrue(new InstantCommand(() -> armSubsystem.zeroAllEncoders()));
   }
 
@@ -104,6 +104,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // the testAuto routine will run in auton
-    return new MiddlePosition1(swerveSubsystem);
+    return new testingAuto(swerveSubsystem);
   }
 }
