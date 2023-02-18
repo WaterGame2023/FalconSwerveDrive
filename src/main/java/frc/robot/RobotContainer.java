@@ -65,9 +65,7 @@ public class RobotContainer {
     swerveSubsystem.setDefaultCommand(new TeleopSwerve(swerveSubsystem, driver, translationAxis, strafeAxis, rotationAxis, fieldRelative, openLoop));  //Default command to drive the bot
     // Configure the button bindings
     configureButtonBindings();
-
-    //Initialize the Arm Subsystem
-    armSubsystem.init();
+    
   }
 
   /**
