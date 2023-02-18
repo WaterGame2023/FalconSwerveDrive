@@ -37,7 +37,7 @@ public class RobotContainer {
   private final JoystickButton zeroGyro = new JoystickButton(driver, XboxController.Button.kY.value); // Y button on the controller to zero the gyro
   private final JoystickButton armUpAndOut = new JoystickButton(arm, 3); // Arm up and out
   private final JoystickButton armDownAndOut = new JoystickButton(arm, 2); // Arm down and out
-  private final JoystickButton armStore = new JoystickButton(arm, 1); // Default position
+  private final JoystickButton armStore = new JoystickButton(arm, 10); // Default position
   private final JoystickButton armMiddle = new JoystickButton(arm, 5); // Place object in middle row
   //private final JoystickButton motorRelease = new JoystickButton(arm, 8); //Arm free fall
   private final JoystickButton zeroArmEncoders = new JoystickButton(arm, 9); 
