@@ -1,6 +1,11 @@
 package frc.robot.autos;
 
 import frc.robot.Constants;
+import frc.robot.commands.Arm.ArmHigh;
+import frc.robot.commands.Arm.ArmMid;
+import frc.robot.commands.Arm.PutThoseGrippersAway;
+import frc.robot.commands.Claw.GripperOpen;
+import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.Swerve;
 
 import java.util.List;
@@ -17,8 +22,9 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 
-public class MiddlePosition1 extends SequentialCommandGroup {
-    public MiddlePosition1(Swerve swerveSubsystem){
+public class ArmAuto extends SequentialCommandGroup {
+    private ArmSubsystem sub = new ArmSubsystem();
+    public ArmAuto(Swerve swerveSubsystem){
         TrajectoryConfig config = new TrajectoryConfig(
                 Constants.AutoConstants.kMaxSpeedMetersPerSecond, //Sets Max speed of the bot in auton
                 Constants.AutoConstants.kMaxAccelerationMetersPerSecondSquared) //Sets Max acceleration of the bot in auton
@@ -28,16 +34,12 @@ public class MiddlePosition1 extends SequentialCommandGroup {
         Trajectory testingTrajectory = TrajectoryGenerator.generateTrajectory(
                 // Sets the start direction
                 new Pose2d(0, 0, new Rotation2d(0)),
-                
                 // Should go in a straight line
                 List.of(
-                    new Translation2d(1, -3)
+                    new Translation2d(1, 0), 
+                    new Translation2d(2, 0)), 
+                new Pose2d(3, 0, new Rotation2d(0)), 
                 config);
-
-                new Pose2d(-3, 0, new Pose2d(0)),
-                
-                )
-
 
         PIDController xController = new PIDController(Constants.AutoConstants.kPXController, 0, 0);
         PIDController yController = new PIDController(Constants.AutoConstants.kPYController, 0, 0);
@@ -57,7 +59,12 @@ public class MiddlePosition1 extends SequentialCommandGroup {
 
 
         addCommands(
-            new InstantCommand(() -> swerveSubsystem.resetOdometry(testingTrajectory.getInitialPose())),
-            swerveControllerCommand);
+            
+            new SequentialCommandGroup(
+            new InstantCommand(() -> swerveSubsystem.resetOdometry(testingTrajectory.getInitialPose())),    
+            new ArmMid(sub), new GripperOpen(sub), new PutThoseGrippersAway(sub),
+            swerveControllerCommand
+            )
+            );
     }
 }
