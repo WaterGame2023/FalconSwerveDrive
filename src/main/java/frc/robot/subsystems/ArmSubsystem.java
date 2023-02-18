@@ -35,6 +35,7 @@ public final void init() {
   elbowMotor.setIdleMode(IdleMode.kBrake);
   wristMotor.setIdleMode(IdleMode.kBrake);
   gripperFalcon.setNeutralMode(NeutralMode.Brake);
+  zeroAllEncoders();
 
   //Set open and closed loop ramp rates
   shoulderFalcon.configOpenloopRamp(0);
