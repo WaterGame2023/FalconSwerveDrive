@@ -66,6 +66,7 @@ public class RobotContainer {
     // Configure the button bindings
     configureButtonBindings();
 
+    armSubsystem.zeroAllEncoders();
   }
 
   /**

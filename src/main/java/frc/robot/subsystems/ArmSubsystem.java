@@ -48,8 +48,8 @@ public final void init() {
   gripperFalcon.configClosedloopRamp(0);
 
   //Set the encoder values to read every 30 ms
-  elbowMotor.setPeriodicFramePeriod(PeriodicFrame.kStatus2, 40);
-  wristMotor.setPeriodicFramePeriod(PeriodicFrame.kStatus2, 40);
+  elbowMotor.setPeriodicFramePeriod(PeriodicFrame.kStatus2, 60);
+  wristMotor.setPeriodicFramePeriod(PeriodicFrame.kStatus2, 60);
 
 }
 
