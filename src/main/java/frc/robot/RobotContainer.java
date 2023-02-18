@@ -37,7 +37,7 @@ public class RobotContainer {
   private final JoystickButton zeroGyro = new JoystickButton(driver, XboxController.Button.kY.value); // Y button on the controller to zero the gyro
   private final JoystickButton armUpAndOut = new JoystickButton(arm, 3); // Arm up and out
   private final JoystickButton armDownAndOut = new JoystickButton(arm, 2); // Arm down and out
-  private final JoystickButton armStore = new JoystickButton(arm, 10); // Default position
+  private final JoystickButton armStore = new JoystickButton(arm, 4); // Default position
   private final JoystickButton armMiddle = new JoystickButton(arm, 5); // Place object in middle row
   private final JoystickButton motorRelease = new JoystickButton(arm, 8); //Arm free fall
   private final JoystickButton zeroArmEncoders = new JoystickButton(arm, 9); //Zeroing all arm encoders
@@ -65,7 +65,7 @@ public class RobotContainer {
     swerveSubsystem.setDefaultCommand(new TeleopSwerve(swerveSubsystem, driver, translationAxis, strafeAxis, rotationAxis, fieldRelative, openLoop));  //Default command to drive the bot
     // Configure the button bindings
     configureButtonBindings();
-    
+
   }
 
   /**
