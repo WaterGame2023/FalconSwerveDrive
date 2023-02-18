@@ -102,6 +102,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // the testAuto routine will run in auton
-    return new testingAuto(swerveSubsystem);
+    return new MidCharge(swerveSubsystem);
   }
 }

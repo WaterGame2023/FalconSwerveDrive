@@ -30,8 +30,8 @@ public class MidCharge extends SequentialCommandGroup {
                 new Pose2d(0, 0, new Rotation2d(0)),
                 // Should go in a straight line
                 List.of(
-                    new Translation2d(1, 0)),
-                new Pose2d(3.5, 0, new Rotation2d(0)), //If overshoots use 3.25
+                    new Translation2d(1, 0)), //1st point 1 meter ahead of where we started
+                new Pose2d(3.5, 0, new Rotation2d(0)), //Sets end pose 3 meters ahead of starting point
                 config);
 
         PIDController xController = new PIDController(Constants.AutoConstants.kPXController, 0, 0);

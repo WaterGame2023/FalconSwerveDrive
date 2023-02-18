@@ -17,15 +17,15 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 
-public class testingAuto extends SequentialCommandGroup {
-    public testingAuto(Swerve swerveSubsystem){
+public class LeaveAuto extends SequentialCommandGroup {
+    public LeaveAuto(Swerve swerveSubsystem){
         TrajectoryConfig config = new TrajectoryConfig(
                 Constants.AutoConstants.kMaxSpeedMetersPerSecond, //Sets Max speed of the bot in auton
                 Constants.AutoConstants.kMaxAccelerationMetersPerSecondSquared) //Sets Max acceleration of the bot in auton
                     .setKinematics(Constants.Swerve.swerveKinematics); //Gets all the kinematics info for swerve
 
         // Basic trajectory using the traj generator tool built into WPILib
-        Trajectory testingTrajectory = TrajectoryGenerator.generateTrajectory(
+        Trajectory LeaveTrajectory = TrajectoryGenerator.generateTrajectory(
                 // Sets the start direction
                 new Pose2d(0, 0, new Rotation2d(0)),
                 // Should go in a straight line
@@ -43,7 +43,7 @@ public class testingAuto extends SequentialCommandGroup {
         thetaController.enableContinuousInput(-Math.PI, Math.PI);
 
         SwerveControllerCommand swerveControllerCommand = new SwerveControllerCommand(
-                testingTrajectory,
+                LeaveTrajectory,
                 swerveSubsystem::getPose,
                 Constants.Swerve.swerveKinematics,
                 xController,
@@ -54,7 +54,7 @@ public class testingAuto extends SequentialCommandGroup {
 
 
         addCommands(
-            new InstantCommand(() -> swerveSubsystem.resetOdometry(testingTrajectory.getInitialPose())),
+            new InstantCommand(() -> swerveSubsystem.resetOdometry(LeaveTrajectory.getInitialPose())),
             swerveControllerCommand);
     }
 }
