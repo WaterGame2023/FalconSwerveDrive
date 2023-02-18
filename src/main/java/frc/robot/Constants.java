@@ -116,20 +116,20 @@ public final class Constants {
             public static final double shoulderStorePosition = 0; //The Stored position of the shoulder
             
             // Elbow positions
-            public static final double elbowHighPosition = -17.476152420043945; //The high position of the elbow
+            public static final double elbowHighPosition = -55.096073150634766; //The high position of the elbow
             public static final double elbowMidPosition = -14.666643142700195; //The Midium position of the elbow
-            public static final double elbowLowPosition = -38.14250183105469; //The low position of the elbow
+            public static final double elbowLowPosition = -37.14250183105469; //The low position of the elbow
             public static final double elbowStorePosition = 0; //The Stored position of the elbow
 
             // Wrist positions
-            public static final double wristHighPosition = -58.0473747253418; //The high position of the wrist
+            public static final double wristHighPosition = -61.929683685302734; //The high position of the wrist
             public static final double wristMidPosition = -35.714065551757812; //The Midium position of the wrist. 
-            public static final double wristLowPosition = -49.92958450317383; //The low position of the wrist
+            public static final double wristLowPosition = -60.92958450317383; //The low position of the wrist
             public static final double wristStorePosition = 0; //The Stored position of the elbow
 
             // Claw/gripper positions
-            public static final double gripperOpenPosition = 700; //The open position of the gripper
-            public static final double gripperClosedPosition = 100289; //The closed position of the gripper
+            public static final double gripperOpenPosition = 500; //The open position of the gripper
+            public static final double gripperClosedPosition = 80289; //The closed position of the gripper
 
             // PID values for the Shoulder
             public static final double shoulderKP = 0; //P value for shoulder motor FIXME BY TUNING
@@ -137,18 +137,18 @@ public final class Constants {
             public static final double shoulderKD = 0; //D value for shoulder motor FIXME BY TUNING
             
             // PID values for the Elbow
-            public static final double elbowKP = 0.03; //P value for elbow motor FIXME BY TUNING
-            public static final double elbowKI = 0.000; //I value for elbow motor FIXME BY TUNING
-            public static final double elbowKD = 0.000; //D value for elbow motor FIXME BY TUNING
+            public static final double elbowKP = 0.02; //P value for elbow motor FIXME BY TUNING
+            public static final double elbowKI = 0.00013; //I value for elbow motor FIXME BY TUNING
+            public static final double elbowKD = 0.0001; //D value for elbow motor FIXME BY TUNING
 
             // PID values for the Wrist
             //If you change the speed in the command, change the values inversly and proportionally
-            public static final double wristKP = 0.035; //P value for wrist motor FIXME BY TUNING
+            public static final double wristKP = 0.02; //P value for wrist motor FIXME BY TUNING
             public static final double wristKI = 0.0000; //I value for wrist motor FIXME BY TUNING
-            public static final double wristKD = 0.00001; //D value for wrist motor FIXME BY TUNING
+            public static final double wristKD = 0.00000; //D value for wrist motor FIXME BY TUNING
             
             // PID values for the gripper
-            public static final double gripperKP = 0.00004; //P value for gripper motor FIXME BY TUNING
+            public static final double gripperKP = 0.0001; //P value for gripper motor FIXME BY TUNING
             public static final double gripperKI = 0; //I value for gripper motor FIXME BY TUNING
             public static final double gripperKD = 0; //D value for gripper motor FIXME BY TUNING
         }
@@ -197,12 +197,12 @@ public final class Constants {
     
         // PID Controller values for auton   
         // PID Values for the X controller 
-        public static final double kPXController = 3; // Should only need to adjust this
+        public static final double kPXController = 1.50; // Should only need to adjust this
         public static final double kIXController = 0.00; //Shouldn't need to adjust this right away
         public static final double kDXController = 0.00; //Shouldn't need to adjust this right away
 
         // PID Values for the Y controller
-        public static final double kPYController = 3.5; // Should only need to adjust this
+        public static final double kPYController = 1.75; // Should only need to adjust this
         public static final double kIYController = 0.00; //Shouldn't need to adjust this right away
         public static final double kDYController = 0.00; //Shouldn't need to adjust this right away
 
