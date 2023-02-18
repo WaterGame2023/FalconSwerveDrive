@@ -25,7 +25,7 @@ import frc.robot.subsystems.*;
  */
 public class RobotContainer {
   // Creates new joystick object for the driver on port 0
-  //private final Joystick driver = new Joystick(0);
+  private final Joystick driver = new Joystick(0);
   private final Joystick arm = new Joystick(1);
 
   // Creates the Axis variables mapped to various joysticks on the gamepad
@@ -34,7 +34,7 @@ public class RobotContainer {
   private final int rotationAxis = XboxController.Axis.kRightX.value; //X axis on the right joystick, turns the robot
 
   // Creates button mappings on the controller
-  //private final JoystickButton zeroGyro = new JoystickButton(driver, XboxController.Button.kY.value); // Y button on the controller to zero the gyro
+  private final JoystickButton zeroGyro = new JoystickButton(driver, XboxController.Button.kY.value); // Y button on the controller to zero the gyro
   private final JoystickButton armUpAndOut = new JoystickButton(arm, 2); // A button on the controller to move the arm up and out
   private final JoystickButton armDownAndOut = new JoystickButton(arm, 3); // A button on the controller to move the arm up and out
   private final JoystickButton armStore = new JoystickButton(arm, 4); // A button on the controller to move the arm up and out
@@ -46,7 +46,7 @@ public class RobotContainer {
 
 
   // Define the Swerve subsystem as swerveSubsystem
-  //private final Swerve swerveSubsystem = new Swerve();
+  private final Swerve swerveSubsystem = new Swerve();
   private final ArmSubsystem armSubsystem = new ArmSubsystem();
 
   private final ArmHigh armHigh = new ArmHigh(armSubsystem);
@@ -62,7 +62,7 @@ public class RobotContainer {
   public RobotContainer() {
     boolean fieldRelative = true; // Do you want field oriented control?
     boolean openLoop = true; // Do you want acceleration on the robot
-    //swerveSubsystem.setDefaultCommand(new TeleopSwerve(swerveSubsystem, driver, translationAxis, strafeAxis, rotationAxis, fieldRelative, openLoop));  //Default command to drive the bot
+    swerveSubsystem.setDefaultCommand(new TeleopSwerve(swerveSubsystem, driver, translationAxis, strafeAxis, rotationAxis, fieldRelative, openLoop));  //Default command to drive the bot
     // Configure the button bindings
     configureButtonBindings();
 
@@ -79,7 +79,7 @@ public class RobotContainer {
   private void configureButtonBindings() {
 
     //Drive Buttons
-    //zeroGyro.onTrue(new InstantCommand(() -> swerveSubsystem.zeroGyro()));
+    zeroGyro.onTrue(new InstantCommand(() -> swerveSubsystem.zeroGyro()));
     
     //Arm Buttons
     armUpAndOut.onTrue(armHigh);
@@ -104,7 +104,6 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // the testAuto routine will run in auton
-    //return new testingAuto(swerveSubsystem);
-    return null; //Return null if you don't want to run an auto for testing the arm
+    return new testingAuto(swerveSubsystem);
   }
 }

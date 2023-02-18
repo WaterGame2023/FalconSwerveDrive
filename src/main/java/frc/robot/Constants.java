@@ -14,7 +14,7 @@ public final class Constants {
 
     public static final class Swerve {
         public static final int pigeonID = 0;  //Can ID for Pigeon IMU. 
-        public static final boolean invertGyro = true; // Is the GYRO Upside Down?
+        public static final boolean invertGyro = false; // Is the GYRO Upside Down?
 
         // Drive train configuration constants
         public static final double trackWidth = Units.inchesToMeters(21.00);
@@ -23,7 +23,7 @@ public final class Constants {
         public static final double wheelCircumference = wheelDiameter * Math.PI;
 
         //Acceleration and deceleration ramp times for the drive base
-        public static final double openLoopRamp = 0.25;
+        public static final double openLoopRamp = 0.15;
         public static final double closedLoopRamp = 0.0;
 
         // Swerve module Gear Ratio configuration constants
