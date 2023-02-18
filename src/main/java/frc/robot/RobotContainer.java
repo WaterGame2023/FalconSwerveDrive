@@ -40,7 +40,7 @@ public class RobotContainer {
   private final JoystickButton armStore = new JoystickButton(arm, 10); // Default position
   private final JoystickButton armMiddle = new JoystickButton(arm, 5); // Place object in middle row
   private final JoystickButton motorRelease = new JoystickButton(arm, 8); //Arm free fall
-  private final JoystickButton zeroArmEncoders = new JoystickButton(arm, 9); 
+  private final JoystickButton zeroArmEncoders = new JoystickButton(arm, 9); //Zeroing all arm encoders
   private final JoystickButton gripperOpen = new JoystickButton(arm, 6); //Opens claw
   private final JoystickButton gripperClose = new JoystickButton(arm, 7); //Close claw
 
@@ -82,14 +82,14 @@ public class RobotContainer {
     zeroGyro.onTrue(new InstantCommand(() -> swerveSubsystem.zeroGyro()));
     
     //Arm Buttons
-    armUpAndOut.whileTrue(armHigh);
-    armDownAndOut.whileTrue(armLow);
-    armStore.whileTrue(armStow);
-    armMiddle.whileTrue(armMid);
+    armUpAndOut.onTrue(armHigh);
+    armDownAndOut.onTrue(armLow);
+    armStore.onTrue(armStow);
+    armMiddle.onTrue(armMid);
 
     //Gripper Buttons
-    gripperOpen.whileTrue(greasyGripper9000Open);
-    gripperClose.whileTrue(greasyGripper9000Close);
+    gripperOpen.onTrue(greasyGripper9000Open);
+    gripperClose.onTrue(greasyGripper9000Close);
 
     //Debug Buttons
     motorRelease.onTrue(new InstantCommand(() -> armSubsystem.releaseAllMotors()));

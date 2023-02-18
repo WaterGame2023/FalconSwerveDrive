@@ -32,10 +32,8 @@ public class testingAuto extends SequentialCommandGroup {
                 List.of(
                     new Translation2d(1, 0), //1st point 1 meter ahead of where we started
                     new Translation2d(2, 0), //2nd point 2 meters ahead of where we started
-                    new Translation2d(3, 0), //2nd point 2 meters ahead of where we started
-                    new Translation2d(2, 0),
-                    new Translation2d(1, 0)),
-                new Pose2d(1, 0, new Rotation2d(0)), //Sets end pose 3 meters ahead of starting point
+                    new Translation2d(3, 0)), //2nd point 2 meters ahead of where we started
+                new Pose2d(3, 0, new Rotation2d(0)), //Sets end pose 3 meters ahead of starting point
                 config);
 
         PIDController xController = new PIDController(Constants.AutoConstants.kPXController, 0, 0);
