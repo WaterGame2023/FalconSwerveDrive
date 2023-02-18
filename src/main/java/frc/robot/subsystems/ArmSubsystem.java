@@ -76,15 +76,15 @@ public void stopGripper() {
 }
 
 public double getShoulderAngle() {
-  return shoulderFalcon.getSelectedSensorPosition() / 125;
+  return shoulderFalcon.getSelectedSensorPosition() ;
 }
 
 public double getElbowAngle() {
-  return elbowMotor.getEncoder().getPosition() / 125;
+  return elbowMotor.getEncoder().getPosition();
 }
 
 public double getWristAngle() {
-  return wristMotor.getEncoder().getPosition() / 125;
+  return wristMotor.getEncoder().getPosition();
 }
 
 public double getgripperPosition() {
@@ -107,7 +107,7 @@ public void zeroAllEncoders() {
   shoulderFalcon.setSelectedSensorPosition(0);
   elbowMotor.getEncoder().setPosition(0);
   wristMotor.getEncoder().setPosition(0);
-  gripperFalcon.getSelectedSensorPosition(0);
+  gripperFalcon.setSelectedSensorPosition(0);
   System.out.println("Arm Encoders Zeroed");
 }
 

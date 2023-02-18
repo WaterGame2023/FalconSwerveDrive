@@ -117,19 +117,19 @@ public final class Constants {
             
             // Elbow positions
             public static final double elbowHighPosition = -55.096073150634766; //The high position of the elbow
-            public static final double elbowMidPosition = 0; //The Midium position of the elbow
+            public static final double elbowMidPosition = -14.666643142700195; //The Midium position of the elbow
             public static final double elbowLowPosition = -37.14250183105469; //The low position of the elbow
             public static final double elbowStorePosition = 0; //The Stored position of the elbow
 
             // Wrist positions
             public static final double wristHighPosition = -61.929683685302734; //The high position of the wrist
-            public static final double wristMidPosition = 0; //The Midium position of the wrist. 
+            public static final double wristMidPosition = -35.714065551757812; //The Midium position of the wrist. 
             public static final double wristLowPosition = -60.92958450317383; //The low position of the wrist
             public static final double wristStorePosition = 0; //The Stored position of the elbow
 
             // Claw/gripper positions
-            public static final double gripperOpenPosition = 0; //The open position of the gripper
-            public static final double gripperClosedPosition = 0; //The closed position of the gripper
+            public static final double gripperOpenPosition = 500; //The open position of the gripper
+            public static final double gripperClosedPosition = 80289; //The closed position of the gripper
 
             // PID values for the Shoulder
             public static final double shoulderKP = 0; //P value for shoulder motor FIXME BY TUNING
@@ -137,18 +137,18 @@ public final class Constants {
             public static final double shoulderKD = 0; //D value for shoulder motor FIXME BY TUNING
             
             // PID values for the Elbow
-            public static final double elbowKP = 0.007; //P value for elbow motor FIXME BY TUNING
+            public static final double elbowKP = 0.02; //P value for elbow motor FIXME BY TUNING
             public static final double elbowKI = 0.00013; //I value for elbow motor FIXME BY TUNING
             public static final double elbowKD = 0.0001; //D value for elbow motor FIXME BY TUNING
 
             // PID values for the Wrist
             //If you change the speed in the command, change the values inversly and proportionally
-            public static final double wristKP = 0.0058; //P value for wrist motor FIXME BY TUNING
+            public static final double wristKP = 0.02; //P value for wrist motor FIXME BY TUNING
             public static final double wristKI = 0.0000; //I value for wrist motor FIXME BY TUNING
             public static final double wristKD = 0.00000; //D value for wrist motor FIXME BY TUNING
             
             // PID values for the gripper
-            public static final double gripperKP = 0; //P value for gripper motor FIXME BY TUNING
+            public static final double gripperKP = 0.0001; //P value for gripper motor FIXME BY TUNING
             public static final double gripperKI = 0; //I value for gripper motor FIXME BY TUNING
             public static final double gripperKD = 0; //D value for gripper motor FIXME BY TUNING
         }
