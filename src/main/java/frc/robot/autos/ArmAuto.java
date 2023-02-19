@@ -23,8 +23,7 @@ import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 
 public class ArmAuto extends SequentialCommandGroup {
-    private ArmSubsystem sub = new ArmSubsystem();
-    public ArmAuto(Swerve swerveSubsystem){
+    public ArmAuto(Swerve swerveSubsystem, ArmSubsystem armSubsystem) {
         TrajectoryConfig config = new TrajectoryConfig(
                 Constants.AutoConstants.kMaxSpeedMetersPerSecond, //Sets Max speed of the bot in auton
                 Constants.AutoConstants.kMaxAccelerationMetersPerSecondSquared) //Sets Max acceleration of the bot in auton
@@ -59,12 +58,8 @@ public class ArmAuto extends SequentialCommandGroup {
 
 
         addCommands(
-            
             new SequentialCommandGroup(
-            new InstantCommand(() -> swerveSubsystem.resetOdometry(testingTrajectory.getInitialPose())),    
-            new ArmMid(sub), new GripperOpen(sub), new PutThoseGrippersAway(sub),
-            swerveControllerCommand
-            )
-            );
+            new InstantCommand(() -> swerveSubsystem.resetOdometry(testingTrajectory.getInitialPose())),swerveControllerCommand,    
+            new ArmMid(armSubsystem), new GripperOpen(armSubsystem), new PutThoseGrippersAway(armSubsystem)));
     }
 }
