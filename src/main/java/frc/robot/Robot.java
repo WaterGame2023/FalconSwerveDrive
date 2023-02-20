@@ -17,6 +17,8 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.subsystems.ArmSubsystem;
+import frc.robot.subsystems.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -26,6 +28,8 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  */
 public class Robot extends TimedRobot {
   public static CTREConfigs ctreConfigs;
+
+  private static ArmSubsystem armSubsystem;
 
   Thread m_visionThread;
 
@@ -40,10 +44,11 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     ctreConfigs = new CTREConfigs();
+
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // sendable choosers on the dashboard once we have them.
     m_robotContainer = new RobotContainer();
-     m_visionThread =
+/*      m_visionThread =
         new Thread(
             () -> {
               // Get the UsbCamera from CameraServer
@@ -78,7 +83,9 @@ public class Robot extends TimedRobot {
 
     m_visionThread.setDaemon(true);
 
-    m_visionThread.start();
+    m_visionThread.start(); */
+
+    //m_armSubsystem.zeroAllEncoders();
 
   }
   
