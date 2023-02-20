@@ -1,3 +1,4 @@
+[![Java CI with Gradle](https://github.com/WaterGame2023/RH-2023-Code/actions/workflows/gradle.yml/badge.svg)](https://github.com/WaterGame2023/RH-2023-Code/actions/workflows/gradle.yml)
 # Team 2531 RoboHawks 2023 Robot
 
 ## Table of contents
