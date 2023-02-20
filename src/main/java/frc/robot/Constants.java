@@ -14,7 +14,7 @@ public final class Constants {
 
     public static final class Swerve {
         public static final int pigeonID = 0;  //Can ID for Pigeon IMU. 
-        public static final boolean invertGyro = true; // Is the GYRO Upside Down?
+        public static final boolean invertGyro = false; // Is the GYRO Upside Down?
 
         // Drive train configuration constants
         public static final double trackWidth = Units.inchesToMeters(21.00);
