@@ -12,6 +12,7 @@
 //
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.sensors.Pigeon2;
 //import com.ctre.phoenix.sensors.PigeonIMU;
 import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.SPI;
@@ -33,24 +34,25 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class Swerve extends SubsystemBase {
     public SwerveDriveOdometry swerveOdometry;
     public SwerveModule[] mSwerveMods;
-    public AHRS gyro;
+    public Pigeon2 gyro;
 
     public Swerve() {
-        gyro = new AHRS(SPI.Port.kMXP, (byte) 1000);
-        gyro.zeroYaw();
-
-        Timer.delay(1.0);
-        resetModulesToAbsolute();
+        gyro = new Pigeon2(Constants.Swerve.pigeonID);
+        gyro.configFactoryDefault();
+        zeroGyro();
         
-        swerveOdometry = new SwerveDriveOdometry(Constants.Swerve.swerveKinematics, Rotation2d.fromDegrees(gyro.getFusedHeading()), getModulePositions());
-        //swerveOdometry = new SwerveDriveOdometry(Constants.Swerve.swerveKinematics, getYaw());
-
         mSwerveMods = new SwerveModule[] {
             new SwerveModule(0, Constants.Swerve.Mod0.constants),
             new SwerveModule(1, Constants.Swerve.Mod1.constants),
             new SwerveModule(2, Constants.Swerve.Mod2.constants),
             new SwerveModule(3, Constants.Swerve.Mod3.constants)
         };
+
+        
+        Timer.delay(1.0);
+        resetModulesToAbsolute();
+        
+        swerveOdometry = new SwerveDriveOdometry(Constants.Swerve.swerveKinematics, getYaw(), getModulePositions());
     }
 
     public void drive(Translation2d translation, double rotation, boolean fieldRelative, boolean isOpenLoop) {
@@ -107,26 +109,16 @@ public class Swerve extends SubsystemBase {
         return positions;
     }
 
+
     public void zeroGyro(){
-    gyro.zeroYaw();
+        gyro.setYaw(0);
     }
+
 
     public Rotation2d getYaw() {
-    if (gyro.isMagnetometerCalibrated()) {
-     // will only get valid fused headings if the magnetometer is calibrated
-      return Rotation2d.fromDegrees(gyro.getFusedHeading());
+        return (Constants.Swerve.invertGyro) ? Rotation2d.fromDegrees(360 - gyro.getYaw()) : Rotation2d.fromDegrees(gyro.getYaw());
     }
-
-    // Need to invert readings when using the navX on our bot
-    if (Constants.Swerve.invertGyro) {
-    return Rotation2d.fromDegrees(360.0 - gyro.getYaw());
-    }
-
-    else {
-        return Rotation2d.fromDegrees(gyro.getYaw());
-    }
-    }
-
+    
     public void resetModulesToAbsolute(){
         for(SwerveModule mod : mSwerveMods){
             mod.resetToAbsolute();
@@ -141,7 +133,7 @@ public class Swerve extends SubsystemBase {
             SmartDashboard.putNumber("Mod " + mod.moduleNumber + " CANCoder", mod.getCanCoder().getDegrees());
             SmartDashboard.putNumber("Mod " + mod.moduleNumber + " Integrated encoder", mod.getState().angle.getDegrees());
             SmartDashboard.putNumber("Mod " + mod.moduleNumber + " WE ZOWOMIN HOW FAST", mod.getState().speedMetersPerSecond);
-            SmartDashboard.putNumber("Mod" + mod.moduleNumber + "Auton Voltages" + (mod.getState().speedMetersPerSecond / Constants.AutoConstants.kMaxSpeedMetersPerSecond * 13), 0);  
+            //SmartDashboard.putNumber("Mod" + mod.moduleNumber + "Auton Voltages" + (mod.getState().speedMetersPerSecond / Constants.AutoConstants.kMaxSpeedMetersPerSecond * 13), 0);  
             SmartDashboard.putNumber("Mod" + mod.moduleNumber + " Angle_Current", mod.getAngleCurrent());
             SmartDashboard.putNumber("Mod" + mod.moduleNumber + " Drive_Current", mod.getDriveCurrent());
 

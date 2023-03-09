@@ -17,8 +17,8 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.SwerveControllerCommand;
 
-public class testingAuto extends SequentialCommandGroup {
-    public testingAuto(Swerve swerveSubsystem){
+public class MidCharge extends SequentialCommandGroup {
+    public MidCharge(Swerve swerveSubsystem){
         TrajectoryConfig config = new TrajectoryConfig(
                 Constants.AutoConstants.kMaxSpeedMetersPerSecond, //Sets Max speed of the bot in auton
                 Constants.AutoConstants.kMaxAccelerationMetersPerSecondSquared) //Sets Max acceleration of the bot in auton
@@ -30,15 +30,8 @@ public class testingAuto extends SequentialCommandGroup {
                 new Pose2d(0, 0, new Rotation2d(0)),
                 // Should go in a straight line
                 List.of(
-                    new Translation2d(1, -1.5), //1st point 1 meter ahead of where we started
-                    new Translation2d(2, -1.5), //2nd point 2 meters ahead of where we started
-                    new Translation2d(3, 1.5), //1st point 1 meter ahead of where we started
-                    new Translation2d(4, -1.5),
-                    new Translation2d(5, 1.5), //1st point 1 meter ahead of where we started
-                    new Translation2d(6, -1.5), //2nd point 2 meters ahead of where we started
-                    new Translation2d(7, 1.5), //1st point 1 meter ahead of where we started
-                    new Translation2d(8, -1.5)), //2nd point 2 meters ahead of where we started
-                new Pose2d(9, 0, new Rotation2d(0)), //Sets end pose 3 meters ahead of starting point
+                    new Translation2d(1, 0)), //1st point 1 meter ahead of where we started
+                new Pose2d(3.5, 0, new Rotation2d(0)), //Sets end pose 3 meters ahead of starting point
                 config);
 
         PIDController xController = new PIDController(Constants.AutoConstants.kPXController, 0, 0);

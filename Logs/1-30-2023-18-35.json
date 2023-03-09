@@ -1,0 +1,582 @@
+[
+    {
+        "messageType": 2,
+        "timestamp": 254.208984375,
+        "seqNumber": 12624,
+        "line": "********** Robot program starting **********"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 254.33203125,
+        "seqNumber": 12625,
+        "line": "NT: server: client CONNECTED: 10.25.31.98 port 60724"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 254.8857421875,
+        "seqNumber": 12626,
+        "line": "navX-Sensor Java library for FRC"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 254.96826171875,
+        "seqNumber": 12627,
+        "line": "navX-Sensor Yaw Reset request ignored - startup calibration is currently in progress."
+    },
+    {
+        "timestamp": 255.3408203125,
+        "seqNumber": 12628,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "CANCoder 10 ConfigFactoryDefault",
+        "callStack": "\tat Java_com_ctre_phoenix_sensors_CANCoderJNI_ConfigFactoryDefault\n",
+        "messageType": 0
+    },
+    {
+        "timestamp": 255.341552734375,
+        "seqNumber": 12629,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "CANCoder 10 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 255.609619140625,
+        "seqNumber": 12630,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 3 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 255.610107421875,
+        "seqNumber": 12631,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 3 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 256.4189453125,
+        "seqNumber": 12632,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 4 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 256.419921875,
+        "seqNumber": 12633,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 4 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 257.20361328125,
+        "seqNumber": 12634,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "CANCoder 9 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 257.204345703125,
+        "seqNumber": 12635,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "CANCoder 9 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 257.372314453125,
+        "seqNumber": 12636,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 1 ConfigFactoryDefault",
+        "callStack": "\tat c_MotController_ConfigFactoryDefault\n\tat Java_com_ctre_phoenix_motorcontrol_can_MotControllerJNI_ConfigFactoryDefault\n",
+        "messageType": 0
+    },
+    {
+        "timestamp": 257.373046875,
+        "seqNumber": 12637,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 1 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 258.1474609375,
+        "seqNumber": 12638,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 2 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 258.1484375,
+        "seqNumber": 12639,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 2 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 258.32080078125,
+        "seqNumber": 12640,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix] Library initialization is complete.",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "timestamp": 258.930419921875,
+        "seqNumber": 12641,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "CANCoder 11 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 258.930908203125,
+        "seqNumber": 12642,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "CANCoder 11 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 259.0986328125,
+        "seqNumber": 12643,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 5 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 259.099365234375,
+        "seqNumber": 12644,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 5 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 259.876708984375,
+        "seqNumber": 12645,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 6 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 259.87744140625,
+        "seqNumber": 12646,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 6 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 260.37548828125,
+        "seqNumber": 12647,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix-diagnostics] Server 1.9.0 (Jan  4 2022,20:28:13) running on port: 1250",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "timestamp": 260.655029296875,
+        "seqNumber": 12648,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "CANCoder 12 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 260.65576171875,
+        "seqNumber": 12649,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "CANCoder 12 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 260.822021484375,
+        "seqNumber": 12650,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 7 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 260.822509765625,
+        "seqNumber": 12651,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 7 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 261.597412109375,
+        "seqNumber": 12652,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 8 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 261.59814453125,
+        "seqNumber": 12653,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 8 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 262.393310546875,
+        "seqNumber": 12654,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "Unhandled exception: java.lang.RuntimeException: java.io.IOException: REVLibDriver could not be loaded from path or an embedded resource.\n\tattempted to load for platform /linux/athena/\nLast Load Error: \n/usr/local/frc/third-party/lib/libREVLibDriver.so: /usr/local/frc/third-party/lib/libREVLibDriver.so: undefined symbol: _ZN3wpi10SafeThread4StopEv\n",
+        "location": "com.revrobotics.jni.RevJNIWrapper.<clinit>(RevJNIWrapper.java:44)",
+        "callStack": "\tat com.revrobotics.jni.RevJNIWrapper.<clinit>(RevJNIWrapper.java:44)\n\tat com.revrobotics.CANSparkMaxLowLevel.<clinit>(CANSparkMaxLowLevel.java:38)\n\tat frc.robot.subsystems.ArmSubsystem.<init>(ArmSubsystem.java:20)\n\tat frc.robot.RobotContainer.<init>(RobotContainer.java:39)\n\tat frc.robot.Robot.robotInit(Robot.java:45)\n\tat edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)\n\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)\n\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)\n\tat frc.robot.Main.main(Main.java:24)\n",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.394287109375,
+        "seqNumber": 12655,
+        "line": "Error at com.revrobotics.jni.RevJNIWrapper.<clinit>(RevJNIWrapper.java:44): Unhandled exception: java.lang.RuntimeException: java.io.IOException: REVLibDriver could not be loaded from path or an embedded resource."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.395263671875,
+        "seqNumber": 12656,
+        "line": "\tattempted to load for platform /linux/athena/"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.39599609375,
+        "seqNumber": 12657,
+        "line": "Last Load Error: "
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.396484375,
+        "seqNumber": 12658,
+        "line": "/usr/local/frc/third-party/lib/libREVLibDriver.so: /usr/local/frc/third-party/lib/libREVLibDriver.so: undefined symbol: _ZN3wpi10SafeThread4StopEv"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.3974609375,
+        "seqNumber": 12659,
+        "line": ""
+    },
+    {
+        "timestamp": 262.3974609375,
+        "seqNumber": 12660,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 0,
+        "details": "The robot program quit unexpectedly. This is usually due to a code error.\n  The above stacktrace can help determine where the error occurred.\n  See https://wpilib.org/stacktrace for more information.",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388)",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.39794921875,
+        "seqNumber": 12661,
+        "line": "\tat com.revrobotics.jni.RevJNIWrapper.<clinit>(RevJNIWrapper.java:44)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.3984375,
+        "seqNumber": 12662,
+        "line": "\tat com.revrobotics.CANSparkMaxLowLevel.<clinit>(CANSparkMaxLowLevel.java:38)"
+    },
+    {
+        "timestamp": 262.398681640625,
+        "seqNumber": 12663,
+        "numOccur": 1,
+        "errorCode": 1,
+        "flags": 1,
+        "details": "The startCompetition() method (or methods called by it) should have handled the exception above.",
+        "location": "edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395)",
+        "callStack": "",
+        "messageType": 0
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.39892578125,
+        "seqNumber": 12664,
+        "line": "\tat frc.robot.subsystems.ArmSubsystem.<init>(ArmSubsystem.java:20)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.3994140625,
+        "seqNumber": 12665,
+        "line": "\tat frc.robot.RobotContainer.<init>(RobotContainer.java:39)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.39990234375,
+        "seqNumber": 12666,
+        "line": "\tat frc.robot.Robot.robotInit(Robot.java:45)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.400146484375,
+        "seqNumber": 12667,
+        "line": "\tat edu.wpi.first.wpilibj.TimedRobot.startCompetition(TimedRobot.java:107)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.40087890625,
+        "seqNumber": 12668,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:373)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.40185546875,
+        "seqNumber": 12669,
+        "line": "\tat edu.wpi.first.wpilibj.RobotBase.startRobot(RobotBase.java:463)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.405029296875,
+        "seqNumber": 12670,
+        "line": "\tat frc.robot.Main.main(Main.java:24)"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.40625,
+        "seqNumber": 12671,
+        "line": ""
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.406982421875,
+        "seqNumber": 12672,
+        "line": "Warning at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:388): The robot program quit unexpectedly. This is usually due to a code error."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.407470703125,
+        "seqNumber": 12673,
+        "line": "  The above stacktrace can help determine where the error occurred."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.40771484375,
+        "seqNumber": 12674,
+        "line": "  See https://wpilib.org/stacktrace for more information."
+    },
+    {
+        "messageType": 2,
+        "timestamp": 262.408203125,
+        "seqNumber": 12675,
+        "line": "Error at edu.wpi.first.wpilibj.RobotBase.runRobot(RobotBase.java:395): The startCompetition() method (or methods called by it) should have handled the exception above."
+    },
+    {
+        "timestamp": 262.94384765625,
+        "seqNumber": 12676,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix-diagnostics] Server shutdown cleanly. (dur:10|0)",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "timestamp": 262.944580078125,
+        "seqNumber": 12677,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix] Library shutdown cleanly",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "timestamp": 263.1552734375,
+        "seqNumber": 12678,
+        "numOccur": 1,
+        "errorCode": 0,
+        "flags": 0,
+        "details": "[phoenix-diagnostics] Server shutdown cleanly. (dur:10|0)",
+        "location": "",
+        "callStack": "",
+        "messageType": 1
+    },
+    {
+        "messageType": 2,
+        "timestamp": 266.4248046875,
+        "seqNumber": 12679,
+        "line": "********** Robot program starting **********"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 266.552490234375,
+        "seqNumber": 12680,
+        "line": "NT: server: client CONNECTED: 10.25.31.98 port 60761"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 267.11865234375,
+        "seqNumber": 12681,
+        "line": "navX-Sensor Java library for FRC"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 267.200439453125,
+        "seqNumber": 12682,
+        "line": "navX-Sensor Yaw Reset request ignored - startup calibration is currently in progress."
+    },
+    {
+        "timestamp": 267.573974609375,
+        "seqNumber": 12683,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "CANCoder 10 ConfigFactoryDefault",
+        "callStack": "\tat Java_com_ctre_phoenix_sensors_CANCoderJNI_ConfigFactoryDefault\n",
+        "messageType": 0
+    },
+    {
+        "timestamp": 267.574462890625,
+        "seqNumber": 12684,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "CANCoder 10 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 267.839599609375,
+        "seqNumber": 12685,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 3 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 267.84033203125,
+        "seqNumber": 12686,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 3 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 268.64697265625,
+        "seqNumber": 12687,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 4 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    },
+    {
+        "timestamp": 268.647705078125,
+        "seqNumber": 12688,
+        "numOccur": 1,
+        "errorCode": -200,
+        "flags": 1,
+        "details": "CTR: No new response to update signal",
+        "location": "Talon FX 4 ConfigFactoryDefault",
+        "callStack": "Stack Trace not received for performance reasons.",
+        "messageType": 0
+    }
+]
